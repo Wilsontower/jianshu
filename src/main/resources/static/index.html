@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jianshuApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+	<title>JIANSHU</title>
+
+	<!-- Global stylesheets -->
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">-->
+    <link href="shared/css/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="shared/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="shared/css/core.min.css" rel="stylesheet" type="text/css">
+	<link href="shared/css/components.min.css" rel="stylesheet" type="text/css">
+	<link href="shared/css/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="shared/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="shared/css/icomoon/style_wraplist.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="shared/css/treeGrid.css" type="text/css">
+	<!--<link href="shared/css/icomoon/style_wraplist.css" type="text/css">-->
+
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="shared/js/pace.min.js"></script>
+	<script type="text/javascript" src="shared/js/jquery.min.js"></script>
+	<script type="text/javascript" src="shared/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="shared/js/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!--Third part-->
+	<script type="text/javascript" src="shared/js/angular.js"></script>
+	<script type="text/javascript" src="shared/js/angular-ui-router.js"></script>
+	<script type="text/javascript" src="shared/js/tree-grid-directive.js"></script>
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="shared/js/d3.min.js"></script>
+	<script type="text/javascript" src="shared/js/d3_tooltip.js"></script>
+	<script type="text/javascript" src="shared/js/switchery.min.js"></script>
+	<script type="text/javascript" src="shared/js/uniform.min.js"></script>
+	<script type="text/javascript" src="shared/js/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="shared/js/moment.min.js"></script>
+	<script type="text/javascript" src="shared/js/daterangepicker.js"></script>
+	<script type="text/javascript" src="shared/js/app.js"></script>
+	<script type="text/javascript" src="shared/js/scripts_wraplist.js"></script>
+	<script type="text/javascript" src="shared/js/perfect-scrollbar.min.js"></script>
+	<script type="text/javascript" src="shared/js/jquery-1.11.2.min.js"></script>
+
+
+
+
+	<!--Self written CSS files-->
+	<link rel="stylesheet" href="page/css/index.css" type="text/css">
+
+</head>
+<body>
+
+<!--TODO 要注意父子作用域中变量值的问题。-->
+<div ng-controller="indexCtrl">
+	<!-- Main navbar -->
+	<div ng-include="'page/header.html'"></div>
+	<!-- /main navbar -->
+	<div ui-view></div>
+</div>
+
+
+
+
+<!--Functional JS files-->
+<script type="text/javascript" src="page/js/index.js"></script>
+</body>
+
+
+</html>
+
