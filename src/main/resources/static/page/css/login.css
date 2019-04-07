@@ -2,6 +2,7 @@
 .login-content{
     height: 100%;
     width: 100%;
+    position: fixed;
 }
 
 .login-background{
@@ -14,12 +15,12 @@
 }
 .panel-default{
     position: absolute;
-    top:75px;
-    left: 50px;
     height: 300px;
     width: 350px;
     border-radius: 5px;
     background: #ffffff;
+    margin: auto;
+    top:0; left: 0; right: 0;bottom: 0;
 
 
 }
