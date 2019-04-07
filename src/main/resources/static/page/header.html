@@ -5,31 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body ng-controller="indexCtrl" class="login-body">
 <div class="navbar navbar-inverse background">
     <div class="navbar-header">
         <a class="layout-logo"><img src="images/logo.png" class="logo-img"></a>
         <a class="navbar-brand big-title" href="index.html">校园二手书交易平台</a>
-        <!--<form class="search-form" role="form" >-->
-            <!--<div class="input-group input-group-sm">-->
-                <!--<input type="text" class="form-control">-->
-                <!--<span class="input-group-btn">-->
-                    <!--<button class="btn btn-default" type="button">搜索</button>-->
-                <!--</span>-->
-            <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
-        <!--</form>-->
-    </div>
 
+    </div>
     <div class="navbar-collapse collapse" id="navbar-mobile">
+        <form class="navbar-form navbar-left" ng-if="currentUrl=='main'">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="书名/学校/专业">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span  class="glyphicon glyphicon-search"></span>搜索</button>
+                </span>
+            </div><!-- /input-group -->
+        </form>
         <ul class="nav navbar-nav navbar-right">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">登录</a></li>
+                    <li><a  ng-if="currentUrl=='main'" ng-click="enterLogin()">登录</a></li>
+                    <li><a  ng-if="currentUrl=='login'" ng-click="enterMain()">主页</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <img src="" alt="">
                             <span>用户1</span>
-                            <i class="caret"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a><i class="icon-cog5"></i>设置</a></li>

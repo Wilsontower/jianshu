@@ -1,7 +1,6 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
 }
 
 .layout-logo {
@@ -10,7 +9,6 @@ html, body {
     overflow: hidden;
     float: left;
     left: 10px;
-    top: 5px;
     position: relative;
 }
 
@@ -21,12 +19,13 @@ html, body {
 
 .background {
     background: #333333;
+    border-radius: 0;
+    margin: 0 0 0;
 }
 
 .big-title{
     font-family: "Microsoft YaHei";
     font-size: 24px;
-    top:5px;
     position: relative;
 }
 
@@ -38,10 +37,14 @@ html, body {
 .content {
     position: relative;
     min-height: 100%;
-    box-sizing: border-box;
     padding-bottom: 200px;
 }
 
+.content-inside{
+    position: relative;
+    width: 80%;
+    left: 100px;
+}
 
 .footer {
     position: absolute;

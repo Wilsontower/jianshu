@@ -1,0 +1,41 @@
+
+.login-content{
+    height: 100%;
+    width: 100%;
+}
+
+.login-background{
+    height:100%;
+    width:100%;
+    position:fixed;
+    background: url("../../images/background.jpg") no-repeat;
+    background-size:cover;
+
+}
+.panel-default{
+    position: absolute;
+    top:75px;
+    left: 50px;
+    height: 300px;
+    width: 350px;
+    border-radius: 5px;
+    background: #ffffff;
+
+
+}
+.login-panel-body{
+    position: relative;
+    top:50px;
+    left: 75px;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+
+}
+
+.form{
+    position: relative;
+    margin: 0;
+    height: 200px;
+    width: 200px;
+}
