@@ -9,7 +9,7 @@
 <div class="navbar navbar-inverse background">
     <div class="navbar-header">
         <a class="layout-logo"><img src="images/logo.png" class="logo-img"></a>
-        <a class="navbar-brand big-title" href="index.html">校园二手书交易平台</a>
+        <a class="navbar-brand big-title" ng-click="enterMain()">校园二手书交易平台</a>
 
     </div>
     <div class="navbar-collapse collapse" id="navbar-mobile">
@@ -26,6 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li><a  ng-if="currentUrl=='main'" ng-click="enterLogin()">登录</a></li>
                     <li><a  ng-if="currentUrl=='login'" ng-click="enterMain()">主页</a></li>
+                    <li><a  ng-if="currentUrl=='register'" ng-click="enterLogin()">登录</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <img src="" alt="">

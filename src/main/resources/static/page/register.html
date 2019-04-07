@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册 -JIANSHU</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+</head>
+<body>
+<div ng-controller="registerCtrl">
+    <div class="register-content">
+        <div class="panel panel-default register-panel">
+            <div class="register-panel-body">
+                <form class="form" role="form" name="registerForm" novalidate>
+                    <div class="form-group" style="text-align: center" >
+                   <span>
+                       <input class="form-control" type="text" id="username" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" style="border-radius: 5px;width: 200px;" placeholder="请输入用户名" name="username" ng-model="username" required>
+                       <span style="color:red" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
+                           <span ng-show="registerForm.username.$error.required">*用户名是必须的</span>
+                       </span>
+                   </span>
+                    </div>
+                    <div class="form-group" style="text-align: center">
+                    <span>
+                        <input class="form-control" type="password"  id="password" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" style="border-radius: 5px;width: 200px;" placeholder="请输入密码" name="password" ng-model="password" required>
+                        <span style="color:red" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
+                           <span ng-show="registerForm.password.$error.required">*请输入密码</span>
+                        </span>
+                    </span>
+                    </div>
+                    <div class="form-group" style="text-align: center">
+                    <span>
+                        <input class="form-control" type="password" id="checkPassword" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" style="border-radius: 5px;width: 200px;" placeholder="请再次输入密码" name="checkPassword" ng-model="checkPassword" required>
+                        <span style="color:red" ng-show="registerForm.checkPassword.$dirty && registerForm.checkPassword.$invalid">
+                           <span ng-show="registerForm.checkPassword.$error.required">*请确认密码</span>
+                        </span>
+                    </span>
+                    </div>
+                    <br>
+                    <div class="form-group" style="text-align: center">
+                        <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white">注册</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" ></iframe>
+        </div>
+    </div>
+</div>
+</body>
+</html>

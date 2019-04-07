@@ -30,6 +30,14 @@ INDEX.controller("indexCtrl", ['$scope', '$state', function ($scope, $state) {
         $scope.currentUrl = sessionStorage.getItem("currentUrl");
         $state.go("main",{cache:true},{reload: true});
     }
+
+    $scope.enterRegister = function () {
+
+        sessionStorage.setItem("currentUrl", "register");
+        $scope.homeNavigator.url = sessionStorage.getItem("currentUrl");
+        $scope.currentUrl = sessionStorage.getItem("currentUrl");
+        $state.go("register",{cache:false},{reload: true});
+    }
 }]);
 
 
@@ -44,6 +52,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/login',
        cache: false,
        templateUrl: '/page/login.html'
+   }).state('register', {
+       url: '/register',
+       cache: false,
+       templateUrl: '/page/register.html'
    });
 
 
