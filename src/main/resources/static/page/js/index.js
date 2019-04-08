@@ -75,6 +75,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/register',
        cache: false,
        templateUrl: '/page/register.html'
+   }).state('details', {
+       url: '/details',
+       cache: false,
+       templateUrl: '/page/details.html'
    });
 
 
