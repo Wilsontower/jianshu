@@ -6,19 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
-<body ng-controller="loginCtrl">
-<div class="login-background" >
+<body>
+<div class="login-background" ng-controller="loginCtrl">
     <div class="panel panel-default">
         <div class="login-panel-body">
-            <form class="form" role="form">
+            <form class="form" role="form" name="loginForm" novalidate>
                 <div class="form-group" style="text-align: center">
                    <span>
-                       <input class="form-control" type="text" id="username" style="border-radius: 5px;width: 200px;" placeholder="请输入用户名">
+                       <input class="form-control" type="text" id="username" style="border-radius: 5px;width: 200px;" placeholder="请输入用户名" name="username" ng-model="username" required>
+                       <span style="color:red" ng-show="loginForm.username.$dirty && loginForm.username.$invalid">
+                           <span ng-show="loginForm.username.$error.required">*用户名是必须的</span>
+                       </span>
                    </span>
                 </div>
                 <div class="form-group" style="text-align: center">
                     <span>
-                        <input class="form-control" type="password" id="password" style="border-radius: 5px;width: 200px;" placeholder="请输入密码">
+                        <input class="form-control" type="password" id="password" style="border-radius: 5px;width: 200px;" placeholder="请输入密码" name="password" ng-model="password" required>
+                        <span style="color:red" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+                           <span ng-show="loginForm.password.$error.required">*请输入密码</span>
+                        </span>
                     </span>
                 </div>
                 <div class="form-group">
@@ -33,7 +39,7 @@
 
                 </div>
                 <div class="form-group" style="text-align: center">
-                    <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white">登录</button>
+                    <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white" ng-click="userLogin()">登录</button>
                 </div>
                 <div class="form-group" style="text-align: center">
                     <li style="list-style: none"><a ng-click="enterRegister()">还没有帐号，快注册吧</a></li>

@@ -25,7 +25,7 @@ public class UserController {
         userService.deleteUser(userId);
     }
 
-    @GetMapping(value = "/find/{userId}")
+       @GetMapping(value = "/find/{userId}")
     @CrossOrigin
     public String findUser(@PathVariable String userId) {
         String isRepeat = "true";
@@ -43,6 +43,20 @@ public class UserController {
         myUser.setId(data[0]);
         myUser.setPassword(data[1]);
         userService.addNewUser(myUser);
+    }
+
+    @PostMapping(value = "/checkPassword")
+    @CrossOrigin
+    public String checkPassword(@RequestBody String[] data) {
+        String userId = data[0];
+        String pwd = data[1];
+        String isRight = "false";
+        User myUser = userService.getUserById(userId);
+        if (myUser.getPassword().equals(pwd)){
+            isRight = "true";
+        }
+        return isRight;
+
     }
 
 

@@ -38,16 +38,13 @@ INDEX.controller("registerCtrl", ['$scope', '$http', '$state', function ($scope,
         }
     }
 
-    $scope.findUser = function (userId) {
-
-    }
 
     $scope.enterLogin = function () {
 
         sessionStorage.setItem("currentUrl", "login");
         $scope.homeNavigator.url = sessionStorage.getItem("currentUrl");
-        $scope.currentUrl = sessionStorage.getItem("currentUrl");
-        $state.go("login",{cache:true},{reload: true});
+        currentUrl = sessionStorage.getItem("currentUrl");
+        $state.go("login",{cache:false},{reload: true});
     }
 
 }]);

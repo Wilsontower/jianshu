@@ -1,42 +1,61 @@
 // 根据ng-app的值新建一个模块
 var INDEX = angular.module("jianshuApp", ['ui.router','treeGrid']);
-
+var currentUrl;
+var user;
 
 INDEX.controller("indexCtrl", ['$scope', '$state', function ($scope, $state) {
 
     $state.go('main');
-    if (!sessionStorage.getItem("currentUrl")) {
+    if (!sessionStorage.getItem("currentUrl")&&!sessionStorage.getItem("user")) {
         sessionStorage.setItem("currentUrl", "main");
-        $scope.currentUrl = sessionStorage.getItem("currentUrl");
+        sessionStorage.setItem("user", "tourist");
+        currentUrl = sessionStorage.getItem("currentUrl");
+        user = sessionStorage.getItem("user");
+        $scope.userId = user;
     }else {
-        $scope.currentUrl = sessionStorage.getItem("currentUrl");
+        currentUrl = sessionStorage.getItem("currentUrl");
+        user = sessionStorage.getItem("user");
+        $scope.userId = user;
     }
     $scope.homeNavigator = {
         url: sessionStorage.getItem("currentUrl"),
     };
 
     $scope.enterLogin = function () {
-
+        sessionStorage.setItem("user", "tourist");
+        user = sessionStorage.getItem("user");
+        $scope.userId = user;
         sessionStorage.setItem("currentUrl", "login");
         $scope.homeNavigator.url = sessionStorage.getItem("currentUrl");
-        $scope.currentUrl = sessionStorage.getItem("currentUrl");
-        $state.go("login",{cache:true},{reload: true});
+        currentUrl = sessionStorage.getItem("currentUrl");
+        $state.go("login",{cache:false},{reload: true});
     }
 
     $scope.enterMain = function () {
 
         sessionStorage.setItem("currentUrl", "main");
         $scope.homeNavigator.url = sessionStorage.getItem("currentUrl");
-        $scope.currentUrl = sessionStorage.getItem("currentUrl");
-        $state.go("main",{cache:true},{reload: true});
+        currentUrl = sessionStorage.getItem("currentUrl");
+        user = sessionStorage.getItem("user");
+        $scope.userId = user;
+        $state.go("main",{cache:false},{reload: true});
     }
 
     $scope.enterRegister = function () {
 
         sessionStorage.setItem("currentUrl", "register");
         $scope.homeNavigator.url = sessionStorage.getItem("currentUrl");
-        $scope.currentUrl = sessionStorage.getItem("currentUrl");
+        currentUrl = sessionStorage.getItem("currentUrl");
         $state.go("register",{cache:false},{reload: true});
+    }
+
+    $scope.getCurrentUrl = function () {
+        return currentUrl;
+    }
+
+    $scope.getUser = function () {
+        $scope.userId = user;
+        return user;
     }
 }]);
 
