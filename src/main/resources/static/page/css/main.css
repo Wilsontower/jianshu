@@ -1,0 +1,74 @@
+
+
+#myCarousel{
+    margin-left: auto;
+    background-size: cover;
+    margin-left: 10%;
+}
+
+
+
+#navigationBar{
+    background-color: white;
+    width:68%;
+    margin-top: 20px;
+    margin-left:10%;
+}
+
+.layui-nav{
+    background-color: white;
+}
+
+#content-picture{
+    display: flex;
+    flex-direction: row;
+}
+
+#content-picture-left{
+    width:60%;
+}
+
+#small_pic{
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.small_pic{
+    width: auto;
+    display:flex;
+    flex-direction: row;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.book-type-title{
+    margin-top: 50px;
+    margin-left: 140px;
+    font-family: "Times New Roman";
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.book-type-content{
+    display: flex;
+    flex-direction: row;
+    margin-left: 115px;
+}
+
+.book-content{
+    margin-top: 30px;
+    margin-left: 25px;
+    height: 300px;
+    width:16%;
+    background-color: #fafafa;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+
