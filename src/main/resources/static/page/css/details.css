@@ -1,8 +1,14 @@
 
+.details-container{
+    width: 100%;
+    min-height: 100%;
+
+}
 .details-content{
     width: 80%;
     min-height: 100%;
     margin-left: 10%;
+    position: relative;
 }
 
 .breadcrumb{

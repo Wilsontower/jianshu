@@ -10,41 +10,21 @@
     </style>
 </head>
 <body>
-<div class="details-content" ng-controller="detailsCtrl">
-    <div id="navigationBar">
-        <ul class="layui-nav">
-            <li class="layui-nav-item layui-this"><a href="" style="color:#555555">主页</a></li>
-            <li class="layui-nav-item ">
-                <a href="" style="color:#555555">教学课本</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">文科</a></dd>
-                    <dd><a href="">法科</a></dd>
-                    <dd><a href="">理科</a></dd>
-                    <dd><a href="">工科</a></dd>
-                    <dd><a href="">农科</a></dd>
-                    <dd><a href="">医科</a></dd>
-                </dl>
-            </li>
-            <li class="layui-nav-item">
-                <a href="" style="color:#555555">考研资料</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">数学</a></dd>
-                    <dd><a href="">英语</a></dd>
-                    <dd><a href="">政治</a></dd>
-                    <dd><a href="">专业课</a></dd>
-                </dl>
-            </li>
-            <li class="layui-nav-item" ><a href="" style="color:#555555">经典文学</a></li>
-            <li class="layui-nav-item"><a href="" style="color:#555555">其他</a></li>
+<div class="details-container"  ng-controller="detailsCtrl">
+    <div class="details-content" >
+        <ul class="breadcrumb">
+            <li><a href="#">主页</a></li>
+            <li><a href="#">教材推荐</a></li>
+            <li class="active">计算机网络</li>
         </ul>
     </div>
-    <hr/>
-    <ul class="breadcrumb">
-        <li><a href="#">主页</a></li>
-        <li><a href="#">教材推荐</a></li>
-        <li class="active">计算机网络</li>
-    </ul>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
+    </div>
 </div>
+
 
 </body>
 </html>
