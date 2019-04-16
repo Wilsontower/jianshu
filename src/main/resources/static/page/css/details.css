@@ -1,0 +1,15 @@
+
+.details-content{
+    width: 80%;
+    min-height: 100%;
+    margin-left: 10%;
+}
+
+.breadcrumb{
+    margin-top: 0;
+}
+.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: "/ ";
+    padding: 0 5px;
+}

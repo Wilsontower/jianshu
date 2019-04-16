@@ -57,4 +57,12 @@ INDEX.controller("loginCtrl", ['$scope', '$http', '$state', function ($scope, $h
         $state.go("main",{cache:false},{reload: true});
     }
 
+    $scope.gotoError = function () {
+
+        $state.go("errorPage",{cache:false},{reload: true});
+    }
+
+
+
+
 }]);

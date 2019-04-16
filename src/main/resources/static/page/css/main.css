@@ -1,9 +1,19 @@
+.main-container{
+    width: 100%;
+    min-height: 100%;
 
+}
+.main-content{
+    width: 80%;
+    min-height: 100%;
+    margin-left: 10%;
+    position: relative;
+
+}
 
 #myCarousel{
     margin-left: auto;
     background-size: cover;
-    margin-left: 10%;
 }
 
 
@@ -12,7 +22,6 @@
     background-color: white;
     width:68%;
     margin-top: 20px;
-    margin-left:10%;
 }
 
 .layui-nav{
@@ -49,7 +58,6 @@
 
 .book-type-title{
     margin-top: 50px;
-    margin-left: 140px;
     font-family: "Times New Roman";
     font-size: 22px;
     font-weight: bold;
@@ -58,7 +66,6 @@
 .book-type-content{
     display: flex;
     flex-direction: row;
-    margin-left: 115px;
 }
 
 .book-content{
@@ -75,7 +82,7 @@
 .book-picture{
     width: 80%;
     margin-top:15px;
-    margin-left:15px;
+    margin-left:10px;
     margin-bottom: -5px;
 }
 
@@ -87,7 +94,7 @@
 }
 
 .book-info{
-    width: 234px;
+    width: 100%;
     height: 12px;
     line-height: 12px;
     margin: 10px 0;

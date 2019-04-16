@@ -79,6 +79,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/details',
        cache: false,
        templateUrl: '/page/details.html'
+   }).state('errorPage', {
+       url: '/errorPage',
+       cache: false,
+       templateUrl: '/page/errorPage.html'
    });
 
 
