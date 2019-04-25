@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>我的店铺 -JIANSHU</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="shop-container"  ng-controller="shopCtrl" ng-init="initShop()">
+    <div class="shop-content" >
+        <div>
+            <ul class="breadcrumb">
+                <li><a ng-click="backToMain()">主页</a></li>
+                <li><a ng-click="gotoUserCenter()">个人中心</a></li>
+                <li class="active">我的店铺</li>
+            </ul>
+        </div>
+        <div class="head-body">
+            <div class="shop-head">
+                <img  id="shop-head" src="../images/defaultHead.jpg">
+            </div>
+            <div class="shop-name">
+                <span>
+                    <label>{{userId}}</label>
+                </span>
+            </div>
+            <div class="my-shop">
+                <span>
+                     <li class="active"><a>我的店铺</a></li>
+                </span>
+            </div>
+            <div class="shop-operation">
+                <span>
+                     <li><a href="#">收货地址</a></li>
+                </span>
+            </div>
+            <div class="shop-operation">
+                <span>
+                     <li><a href="#">所有订单</a></li>
+                </span>
+            </div>
+            <div class="shop-operation">
+                <span>
+                     <li><a href="#">店铺信息</a></li>
+                </span>
+            </div>
+        </div>
+        <hr />
+        <div class="category-container">
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">商品上架</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">待发货</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">待收货</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">待评价</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">退货管理</a></li>
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </div>
+    <div class="shop-list">
+
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
+    </div>
+</div>
+
+
+</body>
+</html>
