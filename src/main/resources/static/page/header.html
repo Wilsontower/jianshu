@@ -30,7 +30,7 @@
                     <li><a  ng-if="getCurrentUrl()=='login'" ng-click="enterMain()"><i class="fa fa-home" aria-hidden="true"></i>主页</a></li>
 
                     <li><a  ng-if="getUser()=='tourist'"><i class="icon-user"></i>游客</a></li>
-                    <li><a  ng-if="getUser()!='tourist'"><i class="icon-user"></i>{{userId}}</a></li>
+                    <li><a  ng-if="getUser()!='tourist'" ng-click="gotoUserCenter()"><i class="icon-user"></i>{{userId}}</a></li>
                 </ul>
             </div>
         </ul>

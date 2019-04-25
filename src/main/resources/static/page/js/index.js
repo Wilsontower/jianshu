@@ -57,6 +57,10 @@ INDEX.controller("indexCtrl", ['$scope', '$state', function ($scope, $state) {
         $scope.userId = user;
         return user;
     }
+
+    $scope.gotoUserCenter = function () {
+        $state.go("userCenter",{cache:false},{reload: true});
+    }
 }]);
 
 
@@ -79,6 +83,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/details',
        cache: false,
        templateUrl: '/page/details.html'
+   }).state('userCenter', {
+       url: '/userCenter',
+       cache: false,
+       templateUrl: '/page/userCenter.html'
    }).state('errorPage', {
        url: '/errorPage',
        cache: false,

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>个人中心 -JIANSHU</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="center-container"  ng-controller="centerCtrl" ng-init="initUserCenter()">
+    <div class="center-content" >
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="#">主页</a></li>
+                <li class="active">个人中心</li>
+            </ul>
+        </div>
+        <div class="head-body">
+            <div class="user-head">
+                <img  id="user-head" src="../images/defaultHead.jpg">
+            </div>
+            <div class="user-name">
+                <span>
+                    <label>{{userId}}</label>
+                </span>
+            </div>
+            <div class="user-shop">
+                <span>
+                     <li><a href="#">我的店铺</a></li>
+                </span>
+            </div>
+            <div class="user-operation">
+                <span>
+                     <li><a href="#">收货地址</a></li>
+                </span>
+            </div>
+            <div class="user-operation">
+                <span>
+                     <li><a href="#">所有订单</a></li>
+                </span>
+            </div>
+            <div class="user-operation">
+                <span>
+                     <li><a href="#">资料修改</a></li>
+                </span>
+            </div>
+        </div>
+        <hr />
+        <div class="category-container">
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">购物车</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">待发货</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">待收货</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">待评价</a></li>
+                </div>
+            </div>
+            <table class="vertical-line"><tr><td valign="top"></td></tr></table>
+            <div class="category">
+                <div class="category-name">
+                    <li><a href="#">退货</a></li>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="book-type-title"> 教材推荐</div>
+        <div class="book-type-content">
+            <div class="book-content" style="border-top-color: red" ng-click="enterDetails()">
+                <div class="book-picture">
+                    <img src="../images/jiwang.jpg" style="width: 80%;margin-left: 15px">
+                </div>
+                <div class="book-name">
+                    计算机网络
+                </div>
+                <div class="book-info">
+                    九成新，几乎没有使用痕迹
+                </div>
+                <div class="book-price">
+                    59 元
+                </div>
+            </div>
+            <div class="book-content" style="border-top-color: orange">
+                <div class="book-picture">
+                    <img src="../images/mayuan.jpg" style="width: 80%;margin-left: 15px">
+                </div>
+                <div class="book-name">
+                    马克思原理
+                </div>
+                <div class="book-info">
+                    开卷考试，考前一天买的，全新
+                </div>
+                <div class="book-price">
+                    30 元
+                </div>
+            </div>
+            <div class="book-content" style="border-top-color: green">
+                <div class="book-picture">
+                    <img src="../images/highmath.jpg" style="width: 80%;margin-left: 15px">
+                </div>
+                <div class="book-name">
+                    高数上课本
+                </div>
+                <div class="book-info">
+                    八新，带一些笔记，可小刀
+                </div>
+                <div class="book-price">
+                    35 元
+                </div>
+            </div>
+            <div class="book-content"  style="border-top-color: blue">
+                <div class="book-picture">
+                    <img src="../images/bianyi.jpg" style="width: 80%;margin-left: 15px">
+                </div>
+                <div class="book-name">
+                    编译原理
+                </div>
+                <div class="book-info">
+                    九成新，没怎么翻过
+                </div>
+                <div class="book-price">
+                    40 元
+                </div>
+            </div>
+            <div class="book-content"  style="border-top-color: purple">
+                <div class="book-picture">
+                    <img src="../images/cplusplus.jpg" style="width: 80%;margin-left: 15px">
+                </div>
+                <div class="book-name">
+                    C++编程
+                </div>
+                <div class="book-info">
+                    学到一半放弃了，故出
+                </div>
+                <div class="book-price">
+                    33 元
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
+    </div>
+</div>
+
+
+</body>
+</html>
