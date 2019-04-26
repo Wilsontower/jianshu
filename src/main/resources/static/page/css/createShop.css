@@ -1,0 +1,21 @@
+
+.createShop-container{
+    height:100%;
+    width:100%;
+    position:fixed;
+    background: url("../../images/background.jpg") no-repeat;
+    background-size:cover;
+}
+
+.createShop-content{
+    position: absolute;
+    width: 60%;
+    height:100%;
+    margin-left: 20%;
+    background:rgba(235,235,235,0.5);
+}
+.shop-form{
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+}

@@ -8,35 +8,37 @@ import javax.persistence.Id;
 public class User {
 
     @Id
-    String id;
+    private String userID;
 
-    String password;
+    private String password;
 
-    String school;
+    private String school;
 
-    String age;
+    private String age;
 
-    String type;
+    private String type;
+
+    private String shopID;
 
     public User() {
         //空构造函数
     }
 
-    //构造函数
-    public User(String id, String password, String school, String age, String type) {
-        this.id = id;
+    public User(String userID, String password, String school, String age, String type, String shopID) {
+        this.userID = userID;
         this.password = password;
         this.school = school;
         this.age = age;
         this.type = type;
+        this.shopID = shopID;
     }
 
-    public String getId() {
-        return id;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getPassword() {
@@ -69,6 +71,14 @@ public class User {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getShopID() {
+        return shopID;
+    }
+
+    public void setShopID(String shopID) {
+        this.shopID = shopID;
     }
 
 }

@@ -25,7 +25,7 @@ public class UserController {
         userService.deleteUser(userId);
     }
 
-       @GetMapping(value = "/find/{userId}")
+    @GetMapping(value = "/find/{userId}")
     @CrossOrigin
     public String findUser(@PathVariable String userId) {
         String isRepeat = "true";
@@ -36,12 +36,27 @@ public class UserController {
         return isRepeat;
     }
 
+    @GetMapping(value = "/getType/{userId}")
+    @CrossOrigin
+    public Map<String,Object> getUserType(@PathVariable String userId) {
+        String userType = "personal";
+        User myUser = userService.getUserById(userId);
+        if (myUser!=null){
+            userType = myUser.getType();//默认为个人
+        }
+        Object obj = userType;
+        Map<String, Object> infoMap = new HashMap<>();
+        infoMap.put("userType",obj);
+        return infoMap;
+    }
+
     @PostMapping(value = "/add")
     @CrossOrigin
     public void addUser(@RequestBody String[] data) {
         User myUser = new User();
-        myUser.setId(data[0]);
+        myUser.setUserID(data[0]);
         myUser.setPassword(data[1]);
+        myUser.setType("personal");//默认为个人
         userService.addNewUser(myUser);
     }
 

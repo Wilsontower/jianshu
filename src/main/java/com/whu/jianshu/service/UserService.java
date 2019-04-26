@@ -16,15 +16,15 @@ public class UserService {
     }
 
 
-    public void deleteUser(String id) {
-        userRepository.deleteById(id);
+    public void deleteUser(String userID) {
+        userRepository.deleteById(userID);
     }
 
     public User getUserById(String id) {
-        return userRepository.findByIdIs(id);
+        return userRepository.findByUserIDIs(id);
     }
 
-    public User updateUser(User User) {
-        return userRepository.saveAndFlush(User);
+    public User updateUser(User user) {
+        return userRepository.saveAndFlush(user);
     }
 }
