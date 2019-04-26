@@ -60,6 +60,16 @@ public class UserController {
         userService.addNewUser(myUser);
     }
 
+    @PostMapping(value = "/addShopId")
+    @CrossOrigin
+    public void addShopId(@RequestBody String[] data) {
+       String shopId = data[0];
+       String userId = data[1];
+       User myUser = userService.getUserById(userId);
+       myUser.setShopID(shopId);
+        userService.updateUser(myUser);
+    }
+
     @PostMapping(value = "/checkPassword")
     @CrossOrigin
     public String checkPassword(@RequestBody String[] data) {

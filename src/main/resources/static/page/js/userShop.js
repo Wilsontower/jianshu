@@ -1,12 +1,11 @@
 var INDEX = angular.module("jianshuApp");
 // 主页控制器
 INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $http, $state) {
-
     $scope.initShop = function () {
         user = sessionStorage.getItem("user");
         $scope.userId = user;
         $scope.getShop();
-    }
+    };
 
     $scope.createShop = function () {
         var url_find_shop = "/shop/findByUserId/"+$scope.userId;
@@ -42,8 +41,18 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
                             url: url_create_shop,
                             data:data
                         }).then(function successCallback(response) {
-                            alert("开通成功");
-                            $scope.gotoShop();
+                            var url_get_shop = "/shop/getByUserId/"+$scope.userId;
+                            $http({
+                                method: 'GET',
+                                url: url_get_shop
+                            }).then(function successCallback(response) {
+                                var data = response.data;
+                                $scope.shopId = data["shopID"];
+                                $scope.addShopId($scope.shopId);
+                                alert("开通成功");
+                                $scope.gotoShop();
+                            });
+
                         });
                     });
 
@@ -52,7 +61,7 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
                 }
             }
         });
-    }
+    };
 
     $scope.getShop = function () {
         var url_get_shop = "/shop/getByUserId/"+$scope.userId;
@@ -63,8 +72,9 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
          var data = response.data;
          $scope.shopname = data["shopName"];
          $scope.shopinfo = data["shopInfo"];
+         $scope.shopId = data["shopID"];
         });
-    }
+    };
 
     $scope.gotoShop =function () {
         //先通过用户ID检测是否已经创建过店铺，没有就创建
@@ -83,14 +93,26 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
                 $state.go("createShop",{cache:false},{reload: true});
             }
         });
+    };
 
 
-    }
+    $scope.addShopId = function (shopId) {
+        var data = [];
+        data.push(shopId);
+        data.push($scope.userId);
+        var url_add_shopId = "/user/addShopId";
+        $http({
+            method: 'POST',
+            url: url_add_shopId,
+            data:data
+        }).then(function successCallback(response) {
 
+        });
+    };
 
     $scope.gotoUserCenter = function () {
         $state.go("userCenter",{cache:false},{reload: true});
-    }
+    };
 
     $scope.backToMain = function () {
         sessionStorage.setItem("currentUrl", "main");

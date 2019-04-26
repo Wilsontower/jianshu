@@ -12,6 +12,8 @@ public class User {
 
     private String password;
 
+    private String userInfo;
+
     private String school;
 
     private String age;
@@ -24,9 +26,10 @@ public class User {
         //空构造函数
     }
 
-    public User(String userID, String password, String school, String age, String type, String shopID) {
+    public User(String userID, String password, String userInfo, String school, String age, String type, String shopID) {
         this.userID = userID;
         this.password = password;
+        this.userInfo = userInfo;
         this.school = school;
         this.age = age;
         this.type = type;
@@ -47,6 +50,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(String userInfo) {
+        this.userInfo = userInfo;
     }
 
     public String getSchool() {
@@ -80,5 +91,4 @@ public class User {
     public void setShopID(String shopID) {
         this.shopID = shopID;
     }
-
 }
