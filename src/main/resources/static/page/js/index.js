@@ -95,6 +95,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/createShop',
        cache: false,
        templateUrl: '/page/createShop.html'
+   }).state('uploadBook', {
+       url: '/uploadBook',
+       cache: false,
+       templateUrl: '/page/uploadBook.html'
    }).state('errorPage', {
        url: '/errorPage',
        cache: false,

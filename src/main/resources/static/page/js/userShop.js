@@ -114,6 +114,10 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
         $state.go("userCenter",{cache:false},{reload: true});
     };
 
+    $scope.gotoUploadBook = function () {
+        $state.go("uploadBook",{cache:false},{reload: true});
+    }
+
     $scope.backToMain = function () {
         sessionStorage.setItem("currentUrl", "main");
         currentUrl = sessionStorage.getItem("currentUrl");

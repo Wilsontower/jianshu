@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品上架 -JIANSHU</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+</head>
+<body>
+<div class="createShop-container" ng-controller="shopCtrl">
+    <div>
+        <ul class="breadcrumb">
+            <li><a href="#">主页</a></li>
+            <li><a ng-click="gotoUserCenter()">个人中心</a></li>
+            <li><a ng-click="gotoShop()">我的店铺</a></li>
+            <li class="active">商品上架</li>
+        </ul>
+    </div>
+    <div class="createShop-content">
+        <div class="form-body">
+            <form class="shop-form" role="form" name="createForm" novalidate>
+                <div class="form-group" style="text-align: center;margin-top: 50px">
+                    <span>
+                       <label style="font-size: 16px">开通店铺</label>
+                    </span>
+                </div>
+                <div class="form-group" style="text-align: center" >
+                   <span>
+                       <input class="form-control" type="text" id="shopName" style="border-radius: 5px;width: 100%;" placeholder="请输入店铺名称" name="shopName" ng-model="shopName" required>
+                       <span style="color:red" ng-show="createForm.shopName.$dirty && registerForm.username.$invalid">
+                           <span ng-show="createForm.shopName.$error.required">*店铺名称是必须的</span>
+                       </span>
+                   </span>
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <span>
+                        <textarea class="form-control" type="text"  id="shopInfo" maxlength="200" onchange="this.value=this.value.substring(0,200)" onkeydown="this.value=this.value.substring(0,200)" onkeyup="this.value=this.value.substring(0,200)" style="border-radius: 5px;width: 100%;height: 200px" placeholder="请输入店铺介绍(200字以内)" name="shopInfo" ng-model="shopInfo" required></textarea>
+                        <span style="color:red" ng-show="createForm.shopInfo.$dirty && registerForm.shopInfo.$invalid">
+                           <span ng-show="createForm.shopInfo.$error.required">*请输入店铺描述</span>
+                        </span>
+                    </span>
+                </div>
+                <br>
+                <div class="form-group" style="text-align: center">
+                    <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white" ng-click="createShop()">创建</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
