@@ -27,10 +27,10 @@ public class ShopController {
         shopService.deleteShop(shopId);
     }
 
-    @GetMapping(value = "/findByShopId/{shopId}")
+    @GetMapping(value = "/getByUserId/{userId}")
     @CrossOrigin
-    public Shop findByShopId(@PathVariable String shopId) {
-        Shop myShop = shopService.getShopByShopId(shopId);
+    public Shop getByUserId(@PathVariable String userId) {
+        Shop myShop = shopService.getShopByUserId(userId);
         return myShop;
     }
 

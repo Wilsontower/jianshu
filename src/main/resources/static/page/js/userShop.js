@@ -5,7 +5,7 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
     $scope.initShop = function () {
         user = sessionStorage.getItem("user");
         $scope.userId = user;
-
+        $scope.getShop();
     }
 
     $scope.createShop = function () {
@@ -16,7 +16,7 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
         }).then(function successCallback(response) {
             var findUserResult = response.data;
             if(findUserResult){
-                alert("您已经开通过店铺，无法再次开通")
+                alert("您已经开通过店铺，无法再次开通");
                 user = sessionStorage.getItem("user");
                 $scope.userId = user;
                 $state.go("userShop",{cache:false},{reload: true});
@@ -52,8 +52,18 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
                 }
             }
         });
+    }
 
-
+    $scope.getShop = function () {
+        var url_get_shop = "/shop/getByUserId/"+$scope.userId;
+        $http({
+            method: 'GET',
+            url: url_get_shop
+        }).then(function successCallback(response) {
+         var data = response.data;
+         $scope.shopname = data["shopName"];
+         $scope.shopinfo = data["shopInfo"];
+        });
     }
 
     $scope.gotoShop =function () {
