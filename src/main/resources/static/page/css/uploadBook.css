@@ -1,0 +1,39 @@
+
+.uploadBook-container{
+    width:100%;
+    height:800px;
+}
+
+.uploadBook-content{
+    width: 80%;
+    height:700px;
+    margin-left: 10%;
+    position: relative;
+}
+
+.uploadBook-body{
+    width: 100%;
+    height:100%;
+    background:rgba(235,235,235,0.5);
+}
+
+.form-content{
+    width: 60%;
+    height:100%;
+    margin-left: 20%;
+}
+
+.shop-form{
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+#preview {
+    display: inline-block;
+    width: 2.56rem;
+    height: 2.56rem;
+    position: relative;
+    background-image: url("../../images/background.jpg") no-repeat;
+    background-size: cover;
+}

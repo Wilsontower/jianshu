@@ -7,45 +7,66 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
 <body>
-<div class="createShop-container" ng-controller="shopCtrl">
-    <div>
-        <ul class="breadcrumb">
-            <li><a href="#">主页</a></li>
-            <li><a ng-click="gotoUserCenter()">个人中心</a></li>
-            <li><a ng-click="gotoShop()">我的店铺</a></li>
-            <li class="active">商品上架</li>
-        </ul>
-    </div>
-    <div class="createShop-content">
-        <div class="form-body">
-            <form class="shop-form" role="form" name="createForm" novalidate>
-                <div class="form-group" style="text-align: center;margin-top: 50px">
+<div class="uploadBook-container" ng-controller="shopCtrl">
+    <div class="uploadBook-content">
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="#">主页</a></li>
+                <li><a ng-click="gotoUserCenter()">个人中心</a></li>
+                <li><a ng-click="gotoShop()">我的店铺</a></li>
+                <li class="active">商品上架</li>
+            </ul>
+        </div>
+        <div class="uploadBook-body">
+            <div class="form-content">
+                <form class="Book-form" role="form" name="uploadForm" novalidate>
+                    <div class="form-group" style="text-align: center;">
                     <span>
-                       <label style="font-size: 16px">开通店铺</label>
+                       <label style="font-size: 16px">商品上架</label>
                     </span>
-                </div>
-                <div class="form-group" style="text-align: center" >
+                    </div>
+                    <div class="form-group" style="text-align: left" >
                    <span>
-                       <input class="form-control" type="text" id="shopName" style="border-radius: 5px;width: 100%;" placeholder="请输入店铺名称" name="shopName" ng-model="shopName" required>
-                       <span style="color:red" ng-show="createForm.shopName.$dirty && registerForm.username.$invalid">
-                           <span ng-show="createForm.shopName.$error.required">*店铺名称是必须的</span>
+                       <label for="bookName" style="text-align: left" >商品名称</label>
+                       <input class="form-control" type="text" id="bookName" style="border-radius: 5px;width: 100%;" placeholder="请输入商品名称" name="bookName" ng-model="bookName" required>
+                       <span style="color:red" ng-show="uploadForm.bookName.$dirty && uploadForm.bookName.$invalid">
+                           <span ng-show="uploadForm.bookName.$error.required">*商品名称是必须的</span>
                        </span>
                    </span>
-                </div>
-                <div class="form-group" style="text-align: center">
+                    </div>
+                    <div class="form-group">
+                        <label for="bookPicture">上传图片</label>
+                        <div id="preview">
+                            <input type="file" id="bookPicture" accept="image/png">
+                        </div>
+                        <p class="help-block">选择一张商品相关的图片，尽量清晰全面</p>
+                    </div>
+                    <div class="form-group" style="text-align: left">
                     <span>
-                        <textarea class="form-control" type="text"  id="shopInfo" maxlength="200" onchange="this.value=this.value.substring(0,200)" onkeydown="this.value=this.value.substring(0,200)" onkeyup="this.value=this.value.substring(0,200)" style="border-radius: 5px;width: 100%;height: 200px" placeholder="请输入店铺介绍(200字以内)" name="shopInfo" ng-model="shopInfo" required></textarea>
-                        <span style="color:red" ng-show="createForm.shopInfo.$dirty && registerForm.shopInfo.$invalid">
-                           <span ng-show="createForm.shopInfo.$error.required">*请输入店铺描述</span>
+                          <label for="bookInfo">商品描述</label>
+                        <textarea class="form-control" type="text"  id="bookInfo" maxlength="200" onchange="this.value=this.value.substring(0,200)" onkeydown="this.value=this.value.substring(0,200)" onkeyup="this.value=this.value.substring(0,200)" style="border-radius: 5px;width: 100%;height: 200px" placeholder="请输入商品描述(200字以内)" name="bookInfo" ng-model="bookInfo" required></textarea>
+                        <span style="color:red" ng-show="uploadForm.bookInfo.$dirty && uploadForm.bookInfo.$invalid">
+                           <span ng-show="uploadForm.bookInfo.$error.required">*请输入商品相关的描述</span>
                         </span>
                     </span>
-                </div>
-                <br>
-                <div class="form-group" style="text-align: center">
-                    <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white" ng-click="createShop()">创建</button>
-                </div>
+                    </div>
+                    <div class="form-group" style="text-align: left" >
+                   <span>
+                       <label for="bookPrice">价格</label>
+                       <input class="form-control" type="text" id="bookPrice" style="border-radius: 5px;width: 100%;"  oninput="value=value.replace(/[^\d]/g,'')" placeholder="请输入商品价格" name="bookPrice" ng-model="bookPrice" required>
+                       <span style="color:red" ng-show="uploadForm.bookPrice.$dirty && uploadForm.bookPrice.$invalid">
+                           <span ng-show="uploadForm.bookPrice.$error.required">*请输入商品价格(单位：RMB)</span>
+                       </span>
+                   </span>
+                    </div>
+                    <br>
+                    <div class="form-group" style="text-align: center">
+                        <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white" ng-click="uploadBook()">添加该商品</button>
+                    </div>
 
-            </form>
+                </form>
+            </div>
+
         </div>
     </div>
 </div>
