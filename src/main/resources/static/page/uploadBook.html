@@ -35,9 +35,17 @@
                    </span>
                     </div>
                     <div class="form-group">
-                        <label for="bookPicture">上传图片</label>
-                        <div id="preview">
-                            <input type="file" id="bookPicture" accept="image/png">
+                        <label>上传图片</label>
+                        <div class="input-group">
+                            <div>
+                                <input type="file" id="inputImage"  name="inputImage"  accept="image/jpeg" onchange="angular.element(this).scope().setImagePreview(this.files)" >
+                            </div>
+                        </div>
+                        <br>
+                        <div class="preview" ng-model="imageSrc">
+                            <div class="fileupload pos-rlt">
+                                <img id="showImage" ng-src="{{imageSrc}}" style="max-width:200px;max-height:200px;margin:0 auto; display:block;" class="pos-rlt"  width=100%; height=100%;/>
+                            </div>
                         </div>
                         <p class="help-block">选择一张商品相关的图片，尽量清晰全面</p>
                     </div>
@@ -61,7 +69,7 @@
                     </div>
                     <br>
                     <div class="form-group" style="text-align: center">
-                        <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white" ng-click="uploadBook()">添加该商品</button>
+                        <button type="submit" class="btn btn-default" style="width: 200px;background: #FF9900;color: white" ng-click="loadBook()">添加该商品</button>
                     </div>
 
                 </form>

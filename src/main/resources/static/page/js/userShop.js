@@ -1,10 +1,12 @@
 var INDEX = angular.module("jianshuApp");
 // 主页控制器
 INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $http, $state) {
+
     $scope.initShop = function () {
         user = sessionStorage.getItem("user");
         $scope.userId = user;
         $scope.getShop();
+        $scope.imageSrc = "unSet";
     };
 
     $scope.createShop = function () {
@@ -106,9 +108,25 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
             url: url_add_shopId,
             data:data
         }).then(function successCallback(response) {
-
+            //do nothing
         });
     };
+
+    $scope.setImagePreview = function (files) {
+        var imgFile = files[0];
+        var fileName = imgFile.name;
+        $scope.imgArrs = [];
+        $scope.uploadFile = [];
+        var fileType = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
+        $scope.uploadFile.push(imgFile);
+        $scope.imageSrc = window.URL.createObjectURL(imgFile);
+        $scope.$apply();
+    };
+
+    $scope.loadBook = function () {
+
+    };
+    
 
     $scope.gotoUserCenter = function () {
         $state.go("userCenter",{cache:false},{reload: true});
