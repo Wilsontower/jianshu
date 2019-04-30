@@ -9,6 +9,10 @@ public class Book {
     @Id
     private String bookID;//唯一标识符
 
+    private String bookName;//书名
+
+    private String imageUrl;//图片Url
+
     private String bookPrice;//价格
 
     private String userID;//和用户关联
@@ -29,8 +33,10 @@ public class Book {
     }
 
 
-    public Book(String bookID, String bookPrice, String userID, String shopID, String bookInfo, String bookType, String uploadTime, String shopStatus, String transportStatus) {
+    public Book(String bookID, String bookName, String imageUrl, String bookPrice, String userID, String shopID, String bookInfo, String bookType, String uploadTime, String shopStatus, String transportStatus) {
         this.bookID = bookID;
+        this.bookName = bookName;
+        this.imageUrl = imageUrl;
         this.bookPrice = bookPrice;
         this.userID = userID;
         this.shopID = shopID;
@@ -47,6 +53,22 @@ public class Book {
 
     public void setBookID(String bookID) {
         this.bookID = bookID;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getBookPrice() {
@@ -112,5 +134,4 @@ public class Book {
     public void setTransportStatus(String transportStatus) {
         this.transportStatus = transportStatus;
     }
-
 }

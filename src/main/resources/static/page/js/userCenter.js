@@ -27,7 +27,7 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
         });
 
 
-    }
+    };
 
     $scope.backToMain = function () {
         sessionStorage.setItem("currentUrl", "main");

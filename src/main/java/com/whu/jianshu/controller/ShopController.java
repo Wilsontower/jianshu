@@ -69,7 +69,7 @@ public class ShopController {
         String uuid = UUID.randomUUID().toString();
         //去掉“-”符号
         uuid = uuid.replaceAll("-", "");
-        String shopUUID = "shop"+uuid;
+        String shopUUID = uuid;
         return shopUUID;
     }
 

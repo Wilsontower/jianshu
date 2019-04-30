@@ -36,7 +36,7 @@ INDEX.controller("registerCtrl", ['$scope', '$http', '$state', function ($scope,
 
 
         }
-    }
+    };
 
 
     $scope.enterLogin = function () {

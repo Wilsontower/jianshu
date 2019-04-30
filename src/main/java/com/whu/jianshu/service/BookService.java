@@ -6,6 +6,8 @@ import com.whu.jianshu.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookService {
 
@@ -26,5 +28,9 @@ public class BookService {
 
     public Book updateBook(Book book) {
         return bookRepository.saveAndFlush(book);
+    }
+
+    public List<Book> getAllBookByUserId(String userId) {
+        return bookRepository.findByUserIDIs(userId);
     }
 }

@@ -46,3 +46,8 @@
     border: 1px dotted #aaa;
     display: inline-block;
 }
+
+.shop-list{
+    display: flex;
+    flex-direction: row;
+}
