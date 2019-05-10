@@ -1,0 +1,63 @@
+.userInfo-container{
+    width: 100%;
+    min-height: 100%;
+}
+
+.userInfo-content{
+    width: 80%;
+    min-height: 100%;
+    margin-left: 10%;
+    margin-right: 20%;
+    position: relative;
+}
+.userinfo-name{
+    text-align :center;
+}
+.userInfo{
+    background-color: #fafafa;
+    margin-bottom:20px;
+}
+.userinfo_details {
+    text-align :left;
+    min-height: 100%;
+    margin-left: 20%;
+    margin-bottom:50px;
+    position: relative;
+}
+
+.userinfo-line{
+    float:top;
+    margin-top:10px;
+}
+
+.userinfo_input{
+    margin-right:60%;
+    width:80%;
+}
+.user_input_area{
+    width:60%;
+    resize:none;
+}
+
+.user-info-submit{
+    text-align :left;
+    margin-left: 10%;
+    position: relative;
+}
+.padding-dom{
+    width: 80%;
+    height: 1px;
+    border-top: solid #bbbbbb 1px;
+    margin-bottom:20px
+}
+.submit{
+    background-color: #cccccc;
+    width:100px;
+    height:40px;
+    font-size-adjust: inherit;
+    margin-left:30%;
+    margin-bottom: 20px;
+}
+.submit:hover{
+    background-color: #dddddd;
+}
