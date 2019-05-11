@@ -43,7 +43,10 @@ INDEX.controller("userInfoCtrl", ['$scope', '$http', '$state', function ($scope,
             url: update_user,
             data:newdata
         }).then( function successCallback(response) {
-            alert("修改成功");
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.alert('修改成功');
+            });
         });
     };
     $scope.gotoUserCenter = function () {
