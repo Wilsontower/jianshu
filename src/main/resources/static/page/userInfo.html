@@ -19,46 +19,48 @@
                 <li class="active">我的信息</li>
             </ul>
         </div>
-
         <div class = "userInfo">
             <div class="userinfo_details">
+                <ul class="userinfo_title">
+                    <h3>个人信息</h3>
+                    <p>Personal Information</p>
+                </ul>
                 <div class="userinfo-line">
-                    <label class="userinfo_details_label">用户名：</label>
+                    <p class="userinfo_details_label">用户名：</p>
                     <div class="userinfo_input">
                         {{userId}}
                     </div>
                 </div>
                 <div class="userinfo-line">
-                    <label class="userinfo_details_label">年龄：</label>
+                    <p class="userinfo_details_label">年龄：</p>
                     <div class="userinfo_input">
-                            <input autocomplete="off" placeholder={{userAge}} type="text" rows="2" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_age">
+                            <input autocomplete="off" placeholder={{userAge}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_age" style="border-radius: 4px">
                     </div>
                 </div>
                 <div class="userinfo-line">
-                    <label class="userinfo_details_label">学校：</label>
+                    <p class="userinfo_details_label">学校：</p>
                     <div class="userinfo_input">
-                            <input autocomplete="off" placeholder={{userSchool}} type="text" rows="2" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_school">
+                            <input autocomplete="off" placeholder={{userSchool}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_school" style="border-radius: 4px">
                     </div>
                 </div>
                 <div class="userinfo-line">
-                    <label class="userinfo_details_label">密码：</label>
+                    <p class="userinfo_details_label">密码：</p>
                     <div class="userinfo_input">
-                        <input autocomplete="off" placeholder={{userPassword}} type="text" rows="2" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_password">
+                        <input autocomplete="off" placeholder={{userPassword}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_password" style="border-radius: 4px">
                     </div>
                 </div>
                 <div class="userinfo-line">
-                    <label class="userinfo_details_label">签名：</label>
+                    <p class="userinfo_details_label">签名：</p>
                     <div class="userinfo_input">
-                        <textarea placeholder={{userINFO}} type="textarea" rows="6" autocomplete="off" validateevent="true" class="user_input_area" id = "userinfo_info"></textarea>
+                        <textarea placeholder={{userINFO}} type="textarea" rows="2" autocomplete="off" validateevent="true" class="user_input_area" id = "userinfo_info" style="border-radius: 4px"></textarea>
                     </div>
                 </div>
-            </div>
-            <div class="user-info-submit">
-                <div class="padding-dom"> </div>
-                <div>
-                    <button type="button" class="submit" ng-click="submit()">
-                        <span>保存</span>
-                    </button>
+                <div class="user-info-submit">
+                    <div>
+                        <button type="button" class="submit" ng-click="submit()">
+                            <span class="save_button">保存</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
