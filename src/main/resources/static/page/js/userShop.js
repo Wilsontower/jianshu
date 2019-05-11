@@ -155,7 +155,7 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
             bookData.push($scope.bookPrice);
             bookData.push($scope.userId);
             bookData.push($scope.shopId);
-            bookData.push($scope.imageSrc);
+
             var url_add_book = "/book/add";
             $http({
                 method: 'POST',
@@ -164,6 +164,8 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
             }).then(function successCallback(response) {
                 var tmp = response.data;
                 bookId = tmp["bookId"];
+                var imagePath = "file:////F:\\我的大学\\06大三下\\学习\\软件工程\\Project\\jianshu\\bookImages\\"+bookId+".jpg";
+                bookData.push(imagePath);
                 //把图片写入
                 var url_add_image = "/book/addImage/"+bookId;
                 $http({

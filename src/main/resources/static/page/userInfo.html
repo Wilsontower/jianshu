@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>我的信息 -JIANSHU</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="userInfo-container"  ng-controller="userInfoCtrl" ng-init="initUserInfo()">
+    <div class="userInfo-content">
+        <div>
+            <ul class="breadcrumb">
+                <li><a ng-click="backToMain()">主页</a></li>
+                <li> <a ng-click="gotoUserCenter()">个人中心</a></li>
+                <li class="active">我的信息</li>
+            </ul>
+        </div>
+        <div class = "userInfo">
+            <div class="userinfo_details">
+                <ul class="userinfo_title">
+                    <h3>个人信息</h3>
+                    <p>Personal Information</p>
+                </ul>
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">用户名：</p>
+                    <div class="userinfo_input">
+                        {{userId}}
+                    </div>
+                </div>
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">年龄：</p>
+                    <div class="userinfo_input">
+                            <input autocomplete="off" placeholder={{userAge}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_age" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">学校：</p>
+                    <div class="userinfo_input">
+                            <input autocomplete="off" placeholder={{userSchool}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_school" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">密码：</p>
+                    <div class="userinfo_input">
+                        <input autocomplete="off" placeholder={{userPassword}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "userinfo_password" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">签名：</p>
+                    <div class="userinfo_input">
+                        <textarea placeholder={{userINFO}} type="textarea" rows="2" autocomplete="off" validateevent="true" class="user_input_area" id = "userinfo_info" style="border-radius: 4px"></textarea>
+                    </div>
+                </div>
+                <div class="user-info-submit">
+                    <div>
+                        <button type="button" class="submit" ng-click="submit()">
+                            <span class="save_button">保存</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
+    </div>
+</div>
+
+</body>
+</html>

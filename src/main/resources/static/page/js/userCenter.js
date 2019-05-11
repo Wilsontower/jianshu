@@ -29,6 +29,10 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
 
     };
 
+    $scope.reviseUserInfo = function () {
+        $state.go("userInfo",{cache:false},{reload: true});
+    };
+
     $scope.gotoAllOrder =function () {
         $state.go("allOrder",{cache:false},{reload: true});
     };

@@ -70,6 +70,25 @@ public class UserController {
         userService.updateUser(myUser);
     }
 
+    @GetMapping(value = "/get/{userId}")
+    @CrossOrigin
+    public String[] getUserByID(@PathVariable String userId){
+        User myUser =  userService.getUserById(userId);
+        String[] ans = {myUser.getPassword(),myUser.getAge(),myUser.getSchool(),myUser.getUserInfo()};
+        return ans;
+    }
+
+    @PostMapping(value = "/update")
+    @CrossOrigin
+    public void updateUser(@RequestBody String[] data){
+        //data 第一项为ID，后为数据
+        User myUser = userService.getUserById(data[0]);
+        myUser.setPassword(data[1]);
+        myUser.setAge(data[2]);
+        myUser.setSchool(data[3]);
+        myUser.setUserInfo(data[4]);
+        userService.updateUser(myUser);
+    }
     @PostMapping(value = "/checkPassword")
     @CrossOrigin
     public String checkPassword(@RequestBody String[] data) {

@@ -12,7 +12,7 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public BookOrder addNewOrder(BookOrder bookOrder){return orderRepository.save(bookOrder);}
+    public BookOrder addNewOrder(BookOrder order){return orderRepository.save(order);}
     public void deleteOrder(String orderID) {
         orderRepository.deleteById(orderID);
     }
