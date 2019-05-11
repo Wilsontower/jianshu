@@ -1,0 +1,205 @@
+
+html{
+
+    font-size: 10px;
+
+}
+
+body,a,ul,li{
+
+    padding:0;
+
+    margin:0;
+
+    list-style: none;
+
+    text-decoration: none;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 20px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+body{
+
+    /*width: 100%;*/
+
+    background: rgb(240,240,240);
+
+    font-family:PingFangSC-Regular;
+
+}
+
+div{
+
+    box-sizing: border-box;
+
+}
+
+
+.cell1{
+
+    float: left;
+    height: 1.59rem;
+    width: 47vmax;
+    background: white;
+
+    font-size: 0.12rem;
+
+    margin-top:0.13rem;
+    margin-right:0.13rem;
+}
+
+.title{
+
+    height: 0.22rem;
+
+    border-bottom: 1px solid #D8D8D8;
+
+    padding-left: 0.12rem;
+
+    padding-right: 0.12rem;
+
+}
+
+.title>span{
+
+    float: right;
+
+    font-size: 0.09rem;
+
+    color: #A4A3A3;
+
+}
+
+.cell{
+
+    height: 0.96rem;
+
+    background: white;
+
+    border-bottom: 1px solid #D8D8D8;
+
+    padding:0.12rem 0;
+
+}
+
+.cell>.img{
+
+    width: 1.0rem;
+
+    height: 0.72rem;
+
+    float: left;
+
+    margin-left: 0.12rem;
+
+}
+
+.cell>.img img{
+    width:auto;
+    height:100%;
+}
+
+/*.content{
+overflow: scroll;
+}*/
+
+.cell>.text{
+
+    width: 2.12rem;
+
+    margin-right: 0.12rem;
+
+    float:right
+
+}
+
+.cell>.text>span{
+
+    display: block;
+
+}
+
+.cell .intro{
+
+    font-size: 0.1rem;
+
+    color: #A4A3A3;
+
+}
+
+.cell .spay{
+
+    font-size: 0.09rem;
+
+    color: #A4A3A3;
+
+
+}
+
+.cell .pay{
+
+    color: #26A69A ;
+
+    font-size: 0.1rem;
+
+}
+
+.myFooter{
+
+    height: 0.32rem;
+
+    padding: 0.1rem;
+
+    text-align: center;
+
+}
+
+.myFooter>.myBtn{
+
+    float: right;
+
+}
+
+.myOption{
+
+    width: 0.65rem;
+
+    border: 1px solid #26A69A;
+
+    border-radius: 2px;
+
+    float: left;
+
+    margin-left: 0.07rem;
+
+}
+#navigationBar{
+    background-color: white;
+    width:68%;
+    margin-top: 20px;
+}
+
