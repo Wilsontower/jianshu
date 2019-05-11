@@ -1,6 +1,6 @@
 package com.whu.jianshu.controller;
 
-import com.whu.jianshu.entity.order.BookOrder;
+import com.whu.jianshu.entity.order.Order;
 import com.whu.jianshu.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/order")
 
-public class BookOrderController {
+public class OrderController {
     public static final Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     OrderService orderService;
@@ -29,13 +29,13 @@ public class BookOrderController {
 
     @GetMapping(value = "/fing/{orderId}")
     @CrossOrigin
-    public BookOrder findOrder(@PathVariable String orderId){
+    public Order findOrder(@PathVariable String orderId){
         return orderService.getOrderById(orderId);
     }
 
     @GetMapping(value = "/getAll/{userId}")
     @CrossOrigin
-    public List<BookOrder> getAllOrders(@PathVariable String userId) {
+    public List<Order> getAllOrders(@PathVariable String userId) {
         return orderService.getAllOrderByUserId(userId);
     }
 
@@ -47,10 +47,10 @@ public class BookOrderController {
         String userId = date[1];
         String shopId = date[2];
         String price = date[3];
-        String createtime = getFormatDate();
+        String createTime = getFormatDate();
         String orderState = "代发货";
-        BookOrder bookOrder = new BookOrder(orderId,bookId,price,userId,shopId,createtime,orderState);
-        orderService.addNewOrder(bookOrder);
+        Order order = new Order(orderId,bookId,price,userId,shopId,createTime,orderState);
+        orderService.addNewOrder(order);
     }
 
 
