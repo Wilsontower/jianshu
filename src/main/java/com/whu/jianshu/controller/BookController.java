@@ -84,11 +84,12 @@ public class BookController {
     @CrossOrigin
     public void addImage(@RequestParam(value = "file") MultipartFile file,@PathVariable String bookId) {
         //这里的path是本地的，到时候要替换成服务器上的地址，每个人可以根据情况先替换这个
-        String path = "F:\\我的大学\\06大三下\\学习\\软件工程\\Project\\jianshu\\bookImages\\"+bookId+".jpg";
-        File result = new File(path);//要写入的图片
+        String filePath = "F:\\我的大学\\06大三下\\学习\\软件工程\\Project\\jianshu\\bookImages\\"+bookId+".jpg";
+        //String readPath = "file:////F:\\我的大学\\06大三下\\学习\\软件工程\\Project\\jianshu\\bookImages\\"+bookId+".jpg";
+        File result = new File(filePath);//要写入的图片
         try {
             result.createNewFile();
-            file.transferTo(new File(path));
+            file.transferTo(new File(filePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
