@@ -4,7 +4,7 @@ import javax.persistence.Id;
 import javax.persistence.Entity;
 
 @Entity
-public class BookOrder {
+public class Order {
     @Id
     private String orderID;//唯一标识符
 
@@ -17,15 +17,12 @@ public class BookOrder {
     private String shopID;//和店铺关联
 
     private String uploadTime;//创建时间
-
-    private String orderStatus;//订单状态（代发货）  （已发货）  （待评价）
-
-    public BookOrder() {
+    public Order() {
     }
 
-    public BookOrder(String orderID, String bookID, String price, String userID, String shopID, String uploadTime, String orderStatus){
-        this.bookID = orderID;
+    public Order(String orderID, String bookID, String price, String userID, String shopID, String uploadTime, String orderStatus){
         this.orderID = orderID;
+        this.bookID = bookID;
         this.price = price;
         this.userID = userID;
         this.shopID = shopID;
@@ -33,16 +30,20 @@ public class BookOrder {
         this.orderStatus = orderStatus;
     }
 
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
-    }
-
     public String getOrderID() {
         return orderID;
     }
 
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
     public String getBookID() {
         return bookID;
+    }
+
+    public void setBookID(String bookID) {
+        this.bookID = bookID;
     }
 
     public String getPrice() {
@@ -84,4 +85,9 @@ public class BookOrder {
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
+
+    private String orderStatus;//订单状态（代发货）  （已发货）  （待评价）
+
+
+
 }
