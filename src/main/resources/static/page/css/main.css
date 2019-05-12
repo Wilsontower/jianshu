@@ -14,6 +14,7 @@
 #myCarousel{
     margin-left: auto;
     background-size: cover;
+    height: 300px;
 }
 
 
@@ -42,13 +43,14 @@
     display: flex;
     flex-direction: column;
     margin-left: 40px;
-    margin-top: 20px;
+    height: 300px;
 }
 
 .small_pic{
     width: auto;
     display:flex;
     flex-direction: row;
+    height: 140px;
 }
 
 .content{
