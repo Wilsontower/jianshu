@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-<div class="main-container" ng-controller="mainCtrl">
+<div class="main-container" ng-controller="mainCtrl" ng-init="initMain()">
     <div  class="main-content">
         <div id="navigationBar">
             <ul class="layui-nav">
@@ -104,147 +104,35 @@
                 </div>
                 <div class="book-type-title"> 教材推荐</div>
                     <div class="book-type-content">
-                        <div class="book-content" style="border-top-color: red" ng-click="enterDetails()">
+                        <div class="book-content" ng-repeat="book in recommendBooks" style="border-top-color: red" ng-click="enterDetails(book.bookID)">
                             <div class="book-picture">
-                                <img src="../images/jiwang.jpg" style="width: 80%;margin-left: 15px">
+                                <img ng-src="{{book.imageUrl}}" style="width: 80%;margin-left: 15px">
                             </div>
                             <div class="book-name">
-                                计算机网络
+                                {{book.bookName}}
                             </div>
                             <div class="book-info">
-                                九成新，几乎没有使用痕迹
+                                {{book.bookInfo}}
                             </div>
                             <div class="book-price">
-                                59 元
+                                {{book.bookPrice}} 元
                             </div>
-                        </div>
-                        <div class="book-content" style="border-top-color: orange">
-                            <div class="book-picture">
-                                <img src="../images/mayuan.jpg" style="width: 80%;margin-left: 15px">
-                            </div>
-                            <div class="book-name">
-                                马克思原理
-                            </div>
-                            <div class="book-info">
-                                开卷考试，考前一天买的，全新
-                            </div>
-                            <div class="book-price">
-                                30 元
-                            </div>
-                        </div>
-                        <div class="book-content" style="border-top-color: green">
-                            <div class="book-picture">
-                                <img src="../images/highmath.jpg" style="width: 80%;margin-left: 15px">
-                            </div>
-                            <div class="book-name">
-                                高数上课本
-                            </div>
-                            <div class="book-info">
-                                八新，带一些笔记，可小刀
-                            </div>
-                            <div class="book-price">
-                                35 元
-                            </div>
-                        </div>
-                    <div class="book-content"  style="border-top-color: blue">
-                        <div class="book-picture">
-                            <img src="../images/bianyi.jpg" style="width: 80%;margin-left: 15px">
-                        </div>
-                        <div class="book-name">
-                            编译原理
-                        </div>
-                        <div class="book-info">
-                            九成新，没怎么翻过
-                        </div>
-                        <div class="book-price">
-                            40 元
                         </div>
                     </div>
-                    <div class="book-content"  style="border-top-color: purple">
-                        <div class="book-picture">
-                            <img src="../images/cplusplus.jpg" style="width: 80%;margin-left: 15px">
-                        </div>
-                        <div class="book-name">
-                            C++编程
-                        </div>
-                        <div class="book-info">
-                            学到一半放弃了，故出
-                        </div>
-                        <div class="book-price">
-                            33 元
-                        </div>
-                    </div>
-                </div>
                 <div class="book-type-title"> 考研精华</div>
                 <div class="book-type-content">
-                    <div class="book-content" style="border-top-color: red">
+                    <div class="book-content" ng-repeat="book in kaoyanBooks" style="border-top-color: red" ng-click="enterDetails(book.bookID)">
                         <div class="book-picture">
-                            <img src="../images/zhengzhi.jpg" style="width: 80%;margin-left: 15px">
+                            <img ng-src="{{book.imageUrl}}" style="width: 80%;margin-left: 15px">
                         </div>
                         <div class="book-name">
-                            肖秀荣考研政治
+                            {{book.bookName}}
                         </div>
                         <div class="book-info">
-                            很好用，不小心买了两本
+                            {{book.bookInfo}}
                         </div>
                         <div class="book-price">
-                            40 元
-                        </div>
-                    </div>
-                    <div class="book-content" style="border-top-color: orange">
-                        <div class="book-picture">
-                            <img src="../images/zhangyu.jpg" style="width: 80%;margin-left: 15px">
-                        </div>
-                        <div class="book-name">
-                            张宇高数18讲
-                        </div>
-                        <div class="book-info">
-                            高数太难了放弃考研，故出
-                        </div>
-                        <div class="book-price">
-                            30 元
-                        </div>
-                    </div>
-                    <div class="book-content" style="border-top-color: green">
-                        <div class="book-picture">
-                            <img src="../images/yingyu.jpg" style="width: 80%;margin-left: 15px">
-                        </div>
-                        <div class="book-name">
-                            考研英语资料
-                        </div>
-                        <div class="book-info">
-                            买错资料了，低价甩
-                        </div>
-                        <div class="book-price">
-                            15 元
-                        </div>
-                    </div>
-                    <div class="book-content"  style="border-top-color: blue">
-                        <div class="book-picture">
-                            <img src="../images/yingyu2.jpg" style="width: 80%;margin-left: 20px">
-                        </div>
-                        <div class="book-name">
-                            考研阅读完型专题突破
-                        </div>
-                        <div class="book-info">
-                            专门对付阅读完型的，没做，全新
-                        </div>
-                        <div class="book-price">
-                            33 元
-                        </div>
-                    </div>
-                    <div class="book-content"  style="border-top-color: purple">
-                        <div class="book-picture">
-                            <img src="../images/zhengzhi2.jpg" style="width: 80%;margin-left: 20px">
-                        </div>
-                        <div class="book-name">
-                            考研政治真题详解
-                        </div>
-                        <div class="book-info">
-                            用不着了，需要的取吧，小刀
-                        </div>
-                        <div class="book-price">
-                            25 元
+                            {{book.bookPrice}} 元
                         </div>
                     </div>
                 </div>

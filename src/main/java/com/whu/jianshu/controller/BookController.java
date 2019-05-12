@@ -77,6 +77,13 @@ public class BookController {
         return allBook;
     }
 
+    @GetMapping(value = "/getAllBook")
+    @CrossOrigin
+    public List<Book> getAllBooks() {
+        List<Book> allBook = bookService.getAllBook();
+        return allBook;
+    }
+
 
     @PostMapping(value = "/add")
     @CrossOrigin
