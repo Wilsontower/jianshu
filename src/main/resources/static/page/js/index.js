@@ -1,7 +1,8 @@
 // 根据ng-app的值新建一个模块
 var INDEX = angular.module("jianshuApp", ['ui.router','treeGrid']);
-var currentUrl;
-var user;
+var currentUrl;//储存当前url
+var user;//储存当前用户
+var crumb;//储存当前面包屑导航
 
 INDEX.controller("indexCtrl", ['$scope', '$state', function ($scope, $state) {
 
@@ -80,7 +81,7 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        cache: false,
        templateUrl: '/page/register.html'
    }).state('details', {
-       url: '/details',
+       url: '/details/:bookID',
        cache: false,
        templateUrl: '/page/details.html'
    }).state('userCenter', {

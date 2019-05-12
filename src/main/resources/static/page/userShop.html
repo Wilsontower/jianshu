@@ -87,7 +87,7 @@
         <hr/>
         <div class="book-type-title">书架</div>
         <div class="book-type-content">
-            <div class="book-content" ng-repeat="book in allBooks" style="border-top-color: red" ng-click="enterDetails()">
+            <div class="book-content" ng-repeat="book in allBooks" style="border-top-color: red" ng-click="enterMyDetails(book.bookID)">
                 <div class="book-picture">
                     <img ng-src="{{book.imageUrl}}" style="width: 80%;margin-left: 15px">
                 </div>

@@ -26,6 +26,13 @@ public class BookController {
     public void deleteBook(@PathVariable String bookId) { bookService.deleteBook(bookId);
     }
 
+    @GetMapping(value = "/getByBookId/{bookId}")
+    @CrossOrigin
+    public Book getByBookId(@PathVariable String bookId) {
+       Book book = bookService.getBookById(bookId);
+        return book;
+    }
+
     @GetMapping(value = "/find/{bookId}")
     @CrossOrigin
     public String findUser(@PathVariable String bookId) {

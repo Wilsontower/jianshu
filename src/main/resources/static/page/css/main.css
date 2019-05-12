@@ -66,6 +66,7 @@
 .book-type-content{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .book-content{

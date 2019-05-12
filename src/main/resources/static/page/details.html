@@ -10,30 +10,28 @@
     </style>
 </head>
 <body>
-<div class="details-container"  ng-controller="detailsCtrl">
+<div class="details-container"  ng-controller="detailsCtrl" ng-init="initDetails()">
     <div class="details-content" >
         <div>
             <ul class="breadcrumb">
-                <li><a href="#">主页</a></li>
-                <li><a href="#">教材推荐</a></li>
-                <li class="active">计算机网络</li>
+                <li><a ng-click="backToShop()">我的店铺</a></li>
+                <li class="active">商品详情</li>
             </ul>
         </div>
-       <div class="commodity-container">
+       <div class="commodity-container" ng-model="currentBook">
            <div class="commodity-image">
-               <img src="../images/jiwang.jpg">
+               <img class="bookImage" ng-src="{{currentBook.imageUrl}}">
            </div>
            <div class="commodity-details">
-               <h3 class="commodity-title">计算机网络</h3>
-               <p class="commodity-info">计算机网络-自顶向下方法，九成新，几乎没有使用痕迹</p>
+               <h2 class="commodity-title">{{currentBook.bookName}}</h2>
+               <p class="commodity-info">{{currentBook.bookInfo}}</p>
                <div class="price-meta">
                    <li>
 
                        <div>
-                           <span class="type-price" >价格</span>
                            <strong class="price-str">
                                <en>￥</en>
-                               <en>59.00</en>
+                               <en>{{currentBook.bookPrice}}</en>
                            </strong>
                        </div>
                    </li>

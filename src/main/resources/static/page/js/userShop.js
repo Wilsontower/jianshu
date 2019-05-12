@@ -197,4 +197,10 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
         $state.go("main",{cache:false},{reload: true});
     }
 
+    $scope.enterMyDetails = function (bookId) {
+        $state.go('details', {
+            bookID: bookId
+        })
+    }
+
 }]);
