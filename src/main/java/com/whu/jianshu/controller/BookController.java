@@ -33,6 +33,32 @@ public class BookController {
         return book;
     }
 
+
+    @GetMapping(value = "/stopSale/{bookId}")
+    @CrossOrigin
+    public Book stopSale(@PathVariable String bookId) {
+        Book book = bookService.getBookById(bookId);
+        book.setShopStatus("stop");
+        bookService.updateBook(book);
+        return book;
+    }
+
+    @GetMapping(value = "/startSale/{bookId}")
+    @CrossOrigin
+    public Book startSale(@PathVariable String bookId) {
+        Book book = bookService.getBookById(bookId);
+        book.setShopStatus("onsale");
+        bookService.updateBook(book);
+        return book;
+    }
+
+
+    @GetMapping(value = "/offShelf/{bookId}")
+    @CrossOrigin
+    public void offShelf(@PathVariable String bookId) {
+        bookService.deleteBook(bookId);
+    }
+
     @GetMapping(value = "/find/{bookId}")
     @CrossOrigin
     public String findUser(@PathVariable String bookId) {

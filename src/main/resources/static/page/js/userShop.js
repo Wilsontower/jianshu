@@ -198,7 +198,7 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
     }
 
     $scope.enterMyDetails = function (bookId) {
-        $state.go('details', {
+        $state.go('myDetails', {
             bookID: bookId
         })
     }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>商品详情 -JIANSHU</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="details-container"  ng-controller="myDetailsCtrl" ng-init="initMyDetails()">
+    <div class="details-content" >
+        <div>
+            <ul class="breadcrumb">
+                <li><a ng-click="backToShop()">我的店铺</a></li>
+                <li class="active">商品详情</li>
+            </ul>
+        </div>
+        <div class="commodity-container" ng-model="currentBook">
+            <div class="commodity-image">
+                <img class="bookImage" ng-src="{{currentBook.imageUrl}}">
+            </div>
+            <div class="commodity-details">
+                <h2 class="commodity-title">{{currentBook.bookName}}</h2>
+                <p class="commodity-info">{{currentBook.bookInfo}}</p>
+                <div class="price-meta">
+                    <li>
+
+                        <div>
+                            <strong class="price-str">
+                                <en>￥</en>
+                                <en>{{currentBook.bookPrice}}</en>
+                            </strong>
+                        </div>
+                    </li>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="btn btn-theLeft" ng-if="currentBook.shopStatus=='onsale'">
+                        <a ng-click="stopSale(currentBook.bookID)" style="color: black">停止售卖</a>
+                    </div>
+                    <div class="btn btn-theLeft" ng-if="currentBook.shopStatus=='stop'">
+                        <a ng-click="startSale(currentBook.bookID)" style="color: black">开启售卖</a>
+                    </div>
+                    <div class="btn btn-theRight">
+                        <a ng-click="offShelf(currentBook.bookID)" style="color: black">商品下架</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
+    </div>
+</div>
+
+
+</body>
+</html>
