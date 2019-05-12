@@ -104,7 +104,7 @@
                 </div>
                 <div class="book-type-title"> 教材推荐</div>
                     <div class="book-type-content">
-                        <div class="book-content" ng-repeat="book in recommendBooks" style="border-top-color: red" ng-click="enterDetails(book.bookID)">
+                        <div class="book-content" ng-repeat="book in recommendBooks track by $index" style="border-top-color: red" ng-click="enterDetails(book.bookID)">
                             <div class="book-picture">
                                 <img ng-src="{{book.imageUrl}}" style="width: 80%;margin-left: 15px">
                             </div>
@@ -121,7 +121,7 @@
                     </div>
                 <div class="book-type-title"> 考研精华</div>
                 <div class="book-type-content">
-                    <div class="book-content" ng-repeat="book in kaoyanBooks" style="border-top-color: red" ng-click="enterDetails(book.bookID)">
+                    <div class="book-content" ng-repeat="book in kaoyanBooks track by $index" style="border-top-color: red" ng-click="enterDetails(book.bookID)">
                         <div class="book-picture">
                             <img ng-src="{{book.imageUrl}}" style="width: 80%;margin-left: 15px">
                         </div>
