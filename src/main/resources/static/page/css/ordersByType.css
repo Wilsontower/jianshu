@@ -6,13 +6,11 @@
     height: 1.59rem;
     width: 77vmax;
     background: white;
-
-    font-size: 0.12rem;
-
+    font-size: 30px;
     margin-top:0.13rem;
-    margin-right:0.13rem;
-    margin-left: 0.8rem;
+    margin-left: 15px;
 }
+
 
 .title{
 
@@ -104,9 +102,9 @@ overflow: scroll;
 
 .cell .pay{
 
-    color: #26A69A ;
+    color: #E03512 ;
 
-    font-size: 0.1rem;
+    font-size: 30px;
 
 }
 
@@ -121,21 +119,21 @@ overflow: scroll;
 }
 
 .myFooter>.myBtn{
-
     float: right;
-
+    display: flex;
+    flex-direction: row;
 }
 
 .myOption{
-
-    width: 0.65rem;
-
-    border: 1px solid #26A69A;
-
-    border-radius: 2px;
-
-    float: left;
-
-    margin-left: 0.07rem;
-
+    background-color: #f60;
+    width: 100px;
+    height: 40px;
+    margin-left: 13px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 1px;
+    border: 0;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
 }
