@@ -49,7 +49,7 @@ public class BookOrderController {
         String price = date[3];
         String createtime = getFormatDate();
         String orderState = "代发货";
-        BookOrder bookOrder = new BookOrder(orderId,bookId,price,userId,shopId,createtime,orderState);
+        BookOrder bookOrder = new BookOrder();
         orderService.addNewOrder(bookOrder);
     }
 

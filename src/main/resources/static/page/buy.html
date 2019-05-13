@@ -16,7 +16,7 @@
                 <li class="active">订单详情</li>
             </ul>
         </div>
-        <div class="buy-body">
+        <div class="buy-body"  ng-model="currentBook">
             <div class="buy-details">
                 <hr />
                 <div id="userInfo" ng-model="currentUser">
@@ -30,9 +30,9 @@
                     </div>
                 </div>
                 <hr />
-                <li><a ng-model="currentBook" ng-click="gotoShoper(currentBook.shopId)" style="font-size: 20px;color:black;margin-left: 20px;">wt的小店&nbsp;></a></li>
+                <li><a ng-click="gotoOtherShop(currentBook.shopID)" style="font-size: 20px;color:black;margin-left: 20px;">wt的小店&nbsp;></a></li>
                 <hr />
-                <div id="bookInfo" ng-model="currentBook">
+                <div id="bookInfo">
                     <div id="book-meta">
                         <img ng-src="{{currentBook.imageUrl}}" style="width: 120px;height: 150px;border-style: solid;border-width: 1px;border-color: grey;">
                         <div id="name-price">

@@ -26,6 +26,13 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
         });
     };
 
+
+    $scope.gotoOtherShop = function (shopId) {
+        $state.go('otherShop', {
+            shopID: shopId
+        });
+    };
+
     $scope.backToMain = function () {
         sessionStorage.setItem("currentUrl", "main");
         currentUrl = sessionStorage.getItem("currentUrl");
