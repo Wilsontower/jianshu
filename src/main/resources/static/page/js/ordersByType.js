@@ -47,8 +47,8 @@ INDEX.controller("obtCtrl", ['$scope', '$http', '$state','$stateParams', functio
                 url: url_get_shop
             }).then(function successCallback(response) {
                 var data = response.data;
-                $scope.shopId = data["shopID"];
-                var url_get_allOrderShop = "/order/getAllByShopID/"+$scope.shopId ;
+               var shopId = data["shopID"];
+                var url_get_allOrderShop = "/order/getAllByShopID/"+shopId ;
                 $http({
                     method: 'GET',
                     url: url_get_allOrderShop
@@ -68,7 +68,12 @@ INDEX.controller("obtCtrl", ['$scope', '$http', '$state','$stateParams', functio
 
     };
 
-
+    $scope.backToMain = function () {
+        sessionStorage.setItem("currentUrl", "main");
+        currentUrl = sessionStorage.getItem("currentUrl");
+        user = sessionStorage.getItem("user");
+        $state.go("main",{cache:false},{reload: true});
+    }
 
 
 }]);

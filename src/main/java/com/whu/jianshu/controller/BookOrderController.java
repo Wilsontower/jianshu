@@ -39,6 +39,18 @@ public class BookOrderController {
         return orderService.getAllOrderByUserId(userId);
     }
 
+    @GetMapping(value = "/getAllByUserID/{userId}")
+    @CrossOrigin
+    public List<BookOrder> getAllByUserID(@PathVariable String userId) {
+        return orderService.getAllOrderByUserId(userId);
+    }
+
+    @GetMapping(value = "/getAllByShopID/{shopId}")
+    @CrossOrigin
+    public List<BookOrder> getAllByShopID(@PathVariable String shopId) {
+        return orderService.getAllOrderByShopId(shopId);
+    }
+
     @PostMapping(value = "/add")
     @CrossOrigin
     public void  addOrder(@RequestBody String[] data){

@@ -28,4 +28,7 @@ public class OrderService {
     public List<BookOrder> getAllOrderByUserId(String userId) {
         return orderRepository.findByUserIDIs(userId);
     }
+    public List<BookOrder> getAllOrderByShopId(String userId) {
+        return orderRepository.findByShopIDIs(userId);
+    }
 }

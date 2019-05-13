@@ -10,23 +10,23 @@
     <link rel="stylesheet" href="page/css/ordersByType.css" type="text/css" />
 </head>
 <body>
-<div class="shopInfo-content">
-<ul class="breadcrumb">
+<div class="shopInfo-content" ng-controller="obtCtrl" ng-init="initOrdersByType()">
+<ul class="breadcrumb" ng-model="theType">
     <li><a ng-click="backToMain()">主页</a></li>
     <li><a ng-click="gotoUserCenter()">个人中心</a></li>
-    <li class="active">待发货</li>
+    <li class="active" >{{theType}}</li>
 </ul>
-<div class="cell1">
+<div class="cell1" ng-repeat="order in thisOrders track by $index">
     <div class="title">
-        计算机网络<span>交易成功</span>
+       <span>交易成功</span>
     </div>
     <div class="cell">
         <div class="text">
-            <div class="brand" style="font-size: 30px">计算机网络</div>
-            <span class="intro" style=" font-size: 17px;margin-top: 17px;">九成新，几乎没有使用痕迹</span>
-            <span class="pay" style="font-size: 30px; margin-top: 30px;}">实际付款：￥20</span>
+            <div class="brand" style="font-size: 30px">{{order.bookName}}</div>
+            <span class="intro" style=" font-size: 17px;margin-top: 17px;">{{order.bookInfo}}</span>
+            <span class="pay" style="font-size: 18px; margin-top: 30px;}">实际付款：￥{{order.price}}</span>
         </div>
-        <div class="img"><img src="../images/jiwang.jpg"/></div>
+        <div class="img"><img ng-src="{{order.imageUrl}}"/></div>
     </div>
     <div class="myFooter">
         <div class="myBtn">
