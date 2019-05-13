@@ -1,0 +1,95 @@
+.shopInfo-content{
+    width: 80%;
+    min-height: 100%;
+    margin-left: 10%;
+    margin-right: 20%;
+    position: relative;
+}
+
+ul.shopInfo_title{
+    width: 460px;
+    height: 100px;
+    border-bottom: #e1e1e1 1px solid;
+    padding: 10px 5px 30px 30px;
+    margin-top:-10px;
+}
+
+ul.shopinfo_title h3 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #666;
+}
+
+ul.shopinfo_title p {
+    font-size: 14px;
+    color: #666;
+}
+.shopInfo{
+    background-image: url("../../images/背景3.jpg");
+    margin-bottom:20px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+.shopInfo_details {
+    text-align: left;
+    margin-left: 30%;
+    background-color: white;
+    margin-top: 15px;
+    width: 40%;
+    background-color: white;
+    box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.shopInfo_details_label{
+    float: left;
+    width: 85px;
+    line-height: 48px;
+    color: #666;
+    font-size: 16px;
+}
+
+.shopInfo-line{
+    float:top;
+    margin-top:3px;
+    margin-left:30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.shopInfo_input{
+    width:80%;
+    line-height: 48px;
+}
+
+.shop_input_inner{
+    height: 70%;
+    resize: none;
+    width: 50%;
+    border-radius: 4px;
+    outline: none;
+}
+
+.shop_input_area{
+    width:60%;
+    resize:none;
+}
+
+.shop-info-submit{
+    text-align :left;
+    margin-left: 10%;
+    position: relative;
+}
+
+.shop_submit{
+    background-color: #f60;
+    width:225px;
+    height:40px;
+    font-size-adjust: inherit;
+    margin-left:23%;
+    margin-bottom: 35px;
+    text-align: center;
+    margin-top:15px;
+    border:0;
+}
+
