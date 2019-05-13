@@ -63,6 +63,7 @@ INDEX.controller("userInfoCtrl", ['$scope', '$http', '$state', function ($scope,
                 var layer = layui.layer;
                 layer.alert('修改成功');
             });
+            $state.go("userCenter",{cache:false},{reload: true});
         });
     };
     $scope.gotoUserCenter = function () {

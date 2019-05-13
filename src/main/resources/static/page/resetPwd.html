@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="resetPwd-container"  ng-controller="resetPwdCtrl" ng-init="initResetPwd()">
-    <div class="resetPwd-content">
+    <div class="userInfo-content">
         <div>
             <ul class="breadcrumb">
                 <li><a ng-click="backToMain()">主页</a></li>
@@ -19,30 +19,42 @@
                 <li  class="active"> 修改密码</li>
             </ul>
         </div>
-        <div class = "resetPwdBox">
-            <div class="resetPwd-line">
-                <p class="originPwd_label">请输入原密码：</p>
-                <div class="resetPwd_input">
-                    <input autocomplete="off" type="password" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "origin_pwd" style="border-radius: 4px">
+        <div class = "userInfo">
+            <div class="userinfo_details">
+                <ul class="userinfo_title">
+                    <h3>修改密码</h3>
+                    <p>Password Change</p>
+                </ul>
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">用户名：</p>
+                    <div class="userinfo_input">
+                        {{userId}}
+                    </div>
                 </div>
-            </div>
-            <div class="resetPwd-line">
-                <p class="originPwd_label">请输入新密码：</p>
-                <div class="resetPwd_input">
-                    <input autocomplete="off" type="password" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "new_pwd" style="border-radius: 4px">
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">原密码：</p>
+                    <div class="userinfo_input">
+                        <input autocomplete="off" type="password" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "origin_pwd" style="border-radius: 4px">
+                    </div>
                 </div>
-            </div>
-            <div class="resetPwd-line">
-                <p class="originPwd_label">请确认新密码：</p>
-                <div class="resetPwd_input">
-                    <input autocomplete="off" type="password" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "new_pwd_again" style="border-radius: 4px">
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">新密码：</p>
+                    <div class="userinfo_input">
+                        <input autocomplete="off" \ type="password" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "new_pwd" style="border-radius: 4px">
+                    </div>
                 </div>
-            </div>
-            <div class="resetPwd-submit">
-                <div>
-                    <button type="button" class="submit" ng-click="resetPwd()">
-                        <span class="save_button">修改</span>
-                    </button>
+                <div class="userinfo-line">
+                    <p class="userinfo_details_label">确认：</p>
+                    <div class="userinfo_input">
+                        <input autocomplete="off" \ type="password" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "new_pwd_again" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="user-info-submit">
+                    <div>
+                        <button  type="button" class="submit" ng-click="resetPwd()">
+                            <span class="save_button">确认修改</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
