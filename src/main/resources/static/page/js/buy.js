@@ -43,6 +43,9 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
         orderData.push( $scope.userId );
         orderData.push( $scope.bookShop["shopID"]);
         orderData.push( $scope.currentBook["bookPrice"]);
+        orderData.push($scope.currentBook["bookName"]);
+        orderData.push($scope.currentBook["bookInfo"]);
+        orderData.push($scope.currentBook["imageUrl"]);
         if($scope.leaveMessage) orderData.push( $scope.leaveMessage );
         var url_set_order = "/order/add";
         $http({

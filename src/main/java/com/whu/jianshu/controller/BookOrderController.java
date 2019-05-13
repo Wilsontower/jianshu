@@ -47,13 +47,16 @@ public class BookOrderController {
         String userId = data[1];
         String shopId = data[2];
         String price = data[3];
+        String bookName = data[4];
+        String bookInfo = data[5];
+        String imageUrl = data[6];
         String createTime = getFormatDate();
-        String orderStatus = "待发货";
+        String orderStatus = "tbd";//默认待发货
 
         BookOrder bookOrder = new BookOrder();
         String message=null;
         if(data.length==5) {
-            message  = data[4];
+            message  = data[7];
             bookOrder.setMessage(message);
         }
         bookOrder.setOrderID(orderId);
@@ -63,6 +66,9 @@ public class BookOrderController {
         bookOrder.setPrice(price);
         bookOrder.setCreateTime(createTime);
         bookOrder.setOrderStatus(orderStatus);
+        bookOrder.setBookName(bookName);
+        bookOrder.setBookInfo(bookInfo);
+        bookOrder.setImageUrl(imageUrl);
 
         orderService.addNewOrder(bookOrder);
     }

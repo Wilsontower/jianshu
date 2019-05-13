@@ -58,7 +58,9 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
     };
 
     $scope.gotoWaitForDeliver=function () {
-        $state.go("ordersByType",{cache:false},{reload: true});
+        $state.go('details', {
+            TYPE: "WaitForDeliver"
+        });
     };
 
 

@@ -30,6 +30,7 @@ public class Book {
     private String transportStatus;//书籍在售出后的状态 ap(Awaiting payment),tbd(To be delivered) ,
                                     // ar（Awaiting receive）,wfc（Waiting for comment），return(退货)，rs(退货成功)
     public Book() {
+
     }
 
 
