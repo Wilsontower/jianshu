@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>店铺信息</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="shopInfo-container"  ng-controller="shopInfoCtrl" ng-init="initShopInfo()">
+    <div class="shopInfo-content">
+        <div>
+            <ul class="breadcrumb">
+                <li><a ng-click="backToMain()">主页</a></li>
+                <li> <a ng-click="gotoUserCenter()">个人中心</a></li>
+                <li> <a ng-click="gotoUserShop()">我的店铺</a></li>
+                <li class="active">店铺信息</li>
+            </ul>
+        </div>
+        <div class="shopInfo">
+            <div class="shopInfo_details">
+                <ul class="shopInfo_title">
+                    <h3>店铺信息</h3>
+                    <p>Shop Information</p>
+                </ul>
+                <div class="shopInfo-line">
+                    <p class="shopInfo_details_label">店名：</p>
+                    <div class="shopInfo_input">
+                        <input autocomplete="off" placeholder={{shopName}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "shopinfo_name" style="border-radius: 4px">
+                        <a class="createTime">  ----创建于 {{CreateTimeInfo}}</a>
+                    </div>
+                </div>
+                <div class="shopInfo-line">
+                    <p class="shopInfo_details_label">店铺类型：</p>
+                    <div class="shopInfo_input">
+                        <input autocomplete="off" placeholder={{shopType}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "shopinfo_type" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="shopInfo-line">
+                    <p class="shopInfo_details_label">店铺状态：</p>
+                    <div class="shopInfo_input">
+                        <input autocomplete="off" placeholder={{shopStatus}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "shopinfo_status" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="shopInfo-line">
+                    <p class="shopInfo_details_label">店铺地址：</p>
+                    <div class="shopInfo_input">
+                        <input autocomplete="off" placeholder={{shopAddress}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "shopinfo_address" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="shopInfo-line">
+                    <p class="shopInfo_details_label">店铺电话：</p>
+                    <div class="shopInfo_input">
+                        <input autocomplete="off" placeholder={{shopPhone}} type="text" rows="1" maxlength="16" validateevent="true" class="user_input_inner" id = "shopinfo_phone" style="border-radius: 4px">
+                    </div>
+                </div>
+                <div class="shopInfo-line">
+                    <p class="shopInfo_details_label">店铺介绍：</p>
+                    <div class="shopInfo_input">
+                        <textarea placeholder={{shopINFO}} type="textarea" rows="2" autocomplete="off" validateevent="true" class="user_input_area" id = "shopinfo_info" style="border-radius: 4px"></textarea>
+                    </div>
+                </div>
+                <div class="shopInfo-submit">
+                    <div>
+                        <button type="button" class="submit" ng-click="shopSubmit()">
+                            <span class="save_button">保存</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
+    </div>
+</div>
+</body>
+</html>

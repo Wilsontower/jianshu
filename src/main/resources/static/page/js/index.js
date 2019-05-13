@@ -108,6 +108,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/userShop',
        cache: false,
        templateUrl: '/page/userShop.html'
+   }).state('ShopInfo',{
+       url: '/ShopInfo',
+       cache: false,
+       templateUrl: '/page/ShopInfo.html'
    }).state('createShop', {
        url: '/createShop',
        cache: false,
