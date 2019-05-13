@@ -81,7 +81,7 @@ public class UserController {
     @CrossOrigin
     public String[] getUserByID(@PathVariable String userId){
         User myUser =  userService.getUserById(userId);
-        String[] ans = {myUser.getPassword(),myUser.getAge(),myUser.getSchool(),myUser.getUserInfo()};
+        String[] ans = {myUser.getPassword(),myUser.getAge(),myUser.getSchool(),myUser.getAddress(),myUser.getPhone(),myUser.getReceiver(),myUser.getUserInfo()};
         return ans;
     }
 
@@ -93,7 +93,10 @@ public class UserController {
         myUser.setPassword(data[1]);
         myUser.setAge(data[2]);
         myUser.setSchool(data[3]);
-        myUser.setUserInfo(data[4]);
+        myUser.setAddress(data[4]);
+        myUser.setPhone(data[5]);
+        myUser.setReceiver(data[6]);
+        myUser.setUserInfo(data[7]);
         userService.updateUser(myUser);
     }
     @PostMapping(value = "/checkPassword")

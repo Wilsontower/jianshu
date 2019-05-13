@@ -11,7 +11,7 @@ INDEX.controller("userInfoCtrl", ['$scope', '$http', '$state', function ($scope,
             url: url_get_user
         }).then( function successCallback(response) {
             data = response.data;
-            $scope.userPassword = data[0];
+
             if(data[1]!=null)
                 $scope.userAge = data[1];
             else
@@ -21,22 +21,38 @@ INDEX.controller("userInfoCtrl", ['$scope', '$http', '$state', function ($scope,
             else
                 $scope.userSchool = "设置您的学校"
             if(data[3]!=null)
-                $scope.userINFO = data[3];
+                $scope.userAddress = data[3];
+            else
+                $scope.userAddress = "设置收货地址";
+            if(data[4]!=null)
+                $scope.userPhone = data[4];
+            else
+                $scope.userPhone = "设置您的电话";
+            if(data[5]!=null)
+                $scope.userReceiver = data[5];
+            else
+                $scope.userReceiver = "设置收货人";
+            if(data[6]!=null)
+                $scope.userINFO = data[6];
             else
                 $scope.userINFO = "设置您的签名- ( ゜- ゜)つロ";
             }
         )
     };
     $scope.submit = function(){
-        password=document.getElementById("userinfo_password").value;
         age=document.getElementById("userinfo_age").value;
         school=document.getElementById("userinfo_school").value;
+        address=document.getElementById("userinfo_address").value;
+        phone=document.getElementById("userinfo_phone").value;
+        receiver=document.getElementById("userinfo_receiver").value;
         info=document.getElementById("userinfo_info").value;
-        if(password=="")password = data[0];
         if(age=="")age = data[1];
         if(school=="")school = data[2];
-        if(info=="")info = data[3];
-        newdata = [sessionStorage.getItem("user"),password,age,school,info];
+        if(address=="")address = data[3];
+        if(phone=="")phone = data[4];
+        if(receiver=="")receiver = data[5];
+        if(info=="")info = data[6];
+        newdata = [sessionStorage.getItem("user"),data[0],age,school,address,phone,receiver,info];
         var update_user = "/user/update";
         $http({
             method: 'POST',
