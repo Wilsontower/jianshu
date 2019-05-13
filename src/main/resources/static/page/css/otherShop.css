@@ -1,0 +1,9 @@
+.other-shop-title{
+    float: left;
+    display: flex;
+    margin-top: 70px;
+    margin-left: 50px;
+    height: 100px;
+    text-align: left;
+    flex-direction: column;
+}
