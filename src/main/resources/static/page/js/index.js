@@ -88,7 +88,11 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
            url: '/myDetails/:bookID',
            cache: false,
            templateUrl: '/page/myDetails.html'
-       }).state('userCenter', {
+   }).state('buy', {
+       url: '/buy/:bookID',
+       cache: false,
+       templateUrl: '/page/buy.html'
+   }).state('userCenter', {
        url: '/userCenter',
        cache: false,
        templateUrl: '/page/userCenter.html'

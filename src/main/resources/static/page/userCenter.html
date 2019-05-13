@@ -34,17 +34,17 @@
             </div>
             <div class="user-operation">
                 <span>
-                     <li><a href="#">收货地址</a></li>
-                </span>
-            </div>
-            <div class="user-operation">
-                <span>
                      <li><a ng-click="gotoAllOrder()">所有订单</a></li>
                 </span>
             </div>
             <div class="user-operation">
                 <span>
                      <li><a ng-click="reviseUserInfo()">我的信息</a></li>
+                </span>
+            </div>
+            <div class="user-operation">
+                <span>
+                     <li><a href="#">修改密码</a></li>
                 </span>
             </div>
         </div>
@@ -83,74 +83,18 @@
         <hr/>
         <div class="book-type-title"> 教材推荐</div>
         <div class="book-type-content">
-            <div class="book-content" style="border-top-color: red" ng-click="enterDetails()">
+            <div class="book-content" ng-repeat="book in recommendBooks track by $index" style="border-top-color: red" ng-click="enterDetails(book.bookID)">
                 <div class="book-picture">
-                    <img src="../images/jiwang.jpg" style="width: 80%;margin-left: 15px">
+                    <img ng-src="{{book.imageUrl}}" style="width: 80%;margin-left: 15px">
                 </div>
                 <div class="book-name">
-                    计算机网络
+                    {{book.bookName}}
                 </div>
                 <div class="book-info">
-                    九成新，几乎没有使用痕迹
+                    {{book.bookInfo}}
                 </div>
                 <div class="book-price">
-                    59 元
-                </div>
-            </div>
-            <div class="book-content" style="border-top-color: orange">
-                <div class="book-picture">
-                    <img src="../images/mayuan.jpg" style="width: 80%;margin-left: 15px">
-                </div>
-                <div class="book-name">
-                    马克思原理
-                </div>
-                <div class="book-info">
-                    开卷考试，考前一天买的，全新
-                </div>
-                <div class="book-price">
-                    30 元
-                </div>
-            </div>
-            <div class="book-content" style="border-top-color: green">
-                <div class="book-picture">
-                    <img src="../images/highmath.jpg" style="width: 80%;margin-left: 15px">
-                </div>
-                <div class="book-name">
-                    高数上课本
-                </div>
-                <div class="book-info">
-                    八新，带一些笔记，可小刀
-                </div>
-                <div class="book-price">
-                    35 元
-                </div>
-            </div>
-            <div class="book-content"  style="border-top-color: blue">
-                <div class="book-picture">
-                    <img src="../images/bianyi.jpg" style="width: 80%;margin-left: 15px">
-                </div>
-                <div class="book-name">
-                    编译原理
-                </div>
-                <div class="book-info">
-                    九成新，没怎么翻过
-                </div>
-                <div class="book-price">
-                    40 元
-                </div>
-            </div>
-            <div class="book-content"  style="border-top-color: purple">
-                <div class="book-picture">
-                    <img src="../images/cplusplus.jpg" style="width: 80%;margin-left: 15px">
-                </div>
-                <div class="book-name">
-                    C++编程
-                </div>
-                <div class="book-info">
-                    学到一半放弃了，故出
-                </div>
-                <div class="book-price">
-                    33 元
+                    {{book.bookPrice}} 元
                 </div>
             </div>
         </div>

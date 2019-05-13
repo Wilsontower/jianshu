@@ -22,12 +22,16 @@ public class Shop {
 
     private String status;//店铺状态 open(营业) , stop（停业） ,close（关闭）
 
+    private String phone;//联系电话
+
+    private String address;//地址
+
     public Shop() {
         //空构造函数
     }
 
 
-    public Shop(String shopID, String userID, String shopName, String shopInfo, String shopType, String createTime, String status) {
+    public Shop(String shopID, String userID, String shopName, String shopInfo, String shopType, String createTime, String status, String phone, String address) {
         this.shopID = shopID;
         this.userID = userID;
         this.shopName = shopName;
@@ -35,7 +39,10 @@ public class Shop {
         this.shopType = shopType;
         this.createTime = createTime;
         this.status = status;
+        this.phone = phone;
+        this.address = address;
     }
+
     public String getShopID() {
         return shopID;
     }
@@ -92,4 +99,19 @@ public class Shop {
         this.status = status;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

@@ -1,9 +1,9 @@
 var INDEX = angular.module("jianshuApp");
 // 主页控制器
-INDEX.controller("detailsCtrl", ['$scope', '$http', '$state','$stateParams', function ($scope, $http, $state,$stateParams) {
+INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', function ($scope, $http, $state,$stateParams) {
 
 
-    $scope.initDetails = function () {
+    $scope. initBuy = function () {
         var bookID = $stateParams.bookID;
         var url_get_book = "/book/getByBookId/"+bookID;
         $http({
@@ -16,21 +16,11 @@ INDEX.controller("detailsCtrl", ['$scope', '$http', '$state','$stateParams', fun
         });
     };
 
-    $scope.backToShop = function () {
-        $state.go("userShop",{cache:false},{reload: true});
-    };
-
     $scope.backToMain = function () {
         sessionStorage.setItem("currentUrl", "main");
         currentUrl = sessionStorage.getItem("currentUrl");
         user = sessionStorage.getItem("user");
         $state.go("main",{cache:false},{reload: true});
     };
-
-    $scope.gotoOrderDetails = function (bookId) {
-        $state.go('buy', {
-            bookID: bookId
-        });
-    }
 
 }]);

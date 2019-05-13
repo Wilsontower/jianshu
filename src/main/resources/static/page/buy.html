@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品上架 -JIANSHU</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+</head>
+<body>
+<div class="buy-container" ng-controller="buyCtrl" ng-init="initBuy()">
+    <div class="buy-content">
+        <div>
+            <ul class="breadcrumb">
+                <li><a ng-click="backToMain()">主页</a></li>
+                <li><a onclick="javascript:history.back(0);">商品详情</a></li>
+                <li class="active">订单详情</li>
+            </ul>
+        </div>
+        <div class="buy-body">
+            <div class="details-content">
+                <hr />
+                <div class="address">
+                    <h3>收货人：</h3>
+                    <h3></h3>
+                </div>
+                <hr />
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
