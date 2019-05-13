@@ -6,6 +6,7 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
     $scope. initBuy = function () {
         $scope.userId = sessionStorage.getItem("user");
         var bookID = $stateParams.bookID;
+        var shopID="";
         var url_get_book = "/book/getByBookId/"+bookID;
         $http({
             method: 'GET',
@@ -13,8 +14,19 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
         }).then(function successCallback(response) {
             var data = response.data;
             $scope.currentBook = data;
+            shopID = $scope.currentBook["shopID"];
+            var url_get_shop = "/shop/getShopByShopID/"+shopID;
+            $http({
+                method: 'GET',
+                url: url_get_shop
+            }).then(function successCallback(response) {
+                var tmp = response.data;
+                $scope.bookShop = tmp;
+            });
 
         });
+
+
 
         var url_get_user = "/user/getByUserId/"+ $scope.userId;
         $http({
@@ -25,6 +37,7 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
             $scope.currentUser = data;
         });
     };
+
 
 
     $scope.gotoOtherShop = function (shopId) {

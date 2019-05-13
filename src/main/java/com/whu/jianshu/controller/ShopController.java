@@ -34,6 +34,14 @@ public class ShopController {
         return myShop;
     }
 
+
+    @GetMapping(value = "/getShopByShopID/{shopId}")
+    @CrossOrigin
+    public Shop getByShopID(@PathVariable String shopId) {
+        Shop shop = shopService.getShopByShopId(shopId);
+        return shop;
+    }
+
     @GetMapping(value = "/findByUserId/{userId}")
     @CrossOrigin
     public String findByUserId(@PathVariable String userId) {
