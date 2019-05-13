@@ -1,6 +1,6 @@
 var INDEX = angular.module("jianshuApp");
 // 主页控制器
-INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', function ($scope, $http, $state,$stateParams) {
+INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', function ($scope, $http, $state, $stateParams) {
 
 
     $scope. initBuy = function () {
@@ -26,8 +26,6 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
 
         });
 
-
-
         var url_get_user = "/user/getByUserId/"+ $scope.userId;
         $http({
             method: 'GET',
@@ -38,6 +36,29 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
         });
     };
 
+
+    $scope.addOrder = function () {
+        var orderData = [];
+        orderData.push( $scope.currentBook["bookID"]);
+        orderData.push( $scope.userId );
+        orderData.push( $scope.bookShop["shopID"]);
+        orderData.push( $scope.currentBook["bookPrice"]);
+        if($scope.leaveMessage) orderData.push( $scope.leaveMessage );
+        var url_set_order = "/order/add";
+        $http({
+            method: 'POST',
+            url: url_set_order,
+            data:orderData
+        }).then(function successCallback(response) {
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.alert('购买成功');
+                $state.go('details', {
+                    bookID: $scope.currentBook["bookID"]
+                });
+            });
+        });
+    };
 
 
     $scope.gotoOtherShop = function (shopId) {
