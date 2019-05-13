@@ -24,14 +24,16 @@
             </div>
             <div class="commodity-details">
                 <h2 class="commodity-title">{{currentBook.bookName}}</h2>
+                <hr style="margin-top:40px;">
                 <p class="commodity-info">{{currentBook.bookInfo}}</p>
+                <hr style="margin-top:30px;">
                 <div class="price-meta">
                     <li>
 
                         <div>
                             <strong class="price-str">
-                                <en>￥</en>
-                                <en>{{currentBook.bookPrice}}</en>
+                                <en style="font-size:36px;color: #F60">￥</en>
+                                <en  style="margin-left: -10px">{{currentBook.bookPrice}}</en>
                             </strong>
                         </div>
                     </li>
@@ -39,13 +41,13 @@
                 <div class="clearfix"></div>
                 <div class="row">
                     <div class="btn btn-theLeft" ng-if="currentBook.shopStatus=='onsale'">
-                        <a ng-click="stopSale(currentBook.bookID)" style="color: black">停止售卖</a>
+                        <a ng-click="stopSale(currentBook.bookID)" style="color: white">停止售卖</a>
                     </div>
                     <div class="btn btn-theLeft" ng-if="currentBook.shopStatus=='stop'">
-                        <a ng-click="startSale(currentBook.bookID)" style="color: black">开启售卖</a>
+                        <a ng-click="startSale(currentBook.bookID)" style="color: white">开启售卖</a>
                     </div>
                     <div class="btn btn-theRight">
-                        <a ng-click="offShelf(currentBook.bookID)" style="color: black">商品下架</a>
+                        <a ng-click="offShelf(currentBook.bookID)" style="color: white">商品下架</a>
                     </div>
                 </div>
 
