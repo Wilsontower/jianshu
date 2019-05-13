@@ -41,17 +41,33 @@ public class BookOrderController {
 
     @PostMapping(value = "/add")
     @CrossOrigin
-    public  void addOrder(@RequestBody String[] date){
+    public void  addOrder(@RequestBody String[] data){
         String orderId = getOrderUUID();
-        String bookId = date[0];
-        String userId = date[1];
-        String shopId = date[2];
-        String price = date[3];
-        String createtime = getFormatDate();
-        String orderState = "代发货";
+        String bookId = data[0];
+        String userId = data[1];
+        String shopId = data[2];
+        String price = data[3];
+        String createTime = getFormatDate();
+        String orderStatus = "待发货";
+
         BookOrder bookOrder = new BookOrder();
+        String message=null;
+        if(data.length==5) {
+            message  = data[4];
+            bookOrder.setMessage(message);
+        }
+        bookOrder.setOrderID(orderId);
+        bookOrder.setBookID(bookId);
+        bookOrder.setUserID(userId);
+        bookOrder.setShopID(shopId);
+        bookOrder.setPrice(price);
+        bookOrder.setCreateTime(createTime);
+        bookOrder.setOrderStatus(orderStatus);
+
         orderService.addNewOrder(bookOrder);
     }
+
+
 
 
     public static String getOrderUUID(){

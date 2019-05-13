@@ -15,7 +15,7 @@
         <div>
             <ul class="breadcrumb">
                 <li><a ng-click="backToMain()">主页</a></li>
-                <li><a ng-click="gotoUserCenter()">个人中心</a></li>
+                <li><a onClick="javascript :history.back(0);">提交订单</a></li>
                 <li class="active">浏览店铺</li>
             </ul>
         </div>
@@ -25,10 +25,10 @@
             </div>
             <div class="other-shop-title">
                 <div class="shop-name">
-                    <label style="font-size: 36px; color: #FF7F50;">{{shopname}}王麻子的小铺子</label>
+                    <label style="font-size: 36px; color: #FF7F50;">{{shopname}}</label>
                 </div>
                 <div class="shop-info">
-                    <label style="font-size: 16px;color: grey">{{shopinfo}}辣条海内专营，不是正宗地沟油不要钱</label>
+                    <label style="font-size: 16px;color: grey">{{shopinfo}}</label>
                 </div>
             </div>
         </div>

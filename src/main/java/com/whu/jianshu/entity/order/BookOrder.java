@@ -16,9 +16,9 @@ public class BookOrder {
 
     private String shopID;//和店铺关联
 
-    private String uploadTime;//创建时间
+    private String createTime;//创建时间
 
-    private String orderStatus;//订单状态（代发货）  （已发货）  （待评价）
+    private String orderStatus;//订单状态（待发货）  （已发货）  （待评价）
 
     private String message;//用户留言
 
@@ -26,13 +26,13 @@ public class BookOrder {
     }
 
 
-    public BookOrder(String orderID, String bookID, String price, String userID, String shopID, String uploadTime, String orderStatus, String message) {
+    public BookOrder(String orderID, String bookID, String price, String userID, String shopID, String createTime, String orderStatus, String message) {
         this.orderID = orderID;
         this.bookID = bookID;
         this.price = price;
         this.userID = userID;
         this.shopID = shopID;
-        this.uploadTime = uploadTime;
+        this.createTime = createTime;
         this.orderStatus = orderStatus;
         this.message = message;
     }
@@ -77,12 +77,12 @@ public class BookOrder {
         this.shopID = shopID;
     }
 
-    public String getUploadTime() {
-        return uploadTime;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setUploadTime(String uploadTime) {
-        this.uploadTime = uploadTime;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
     public String getOrderStatus() {

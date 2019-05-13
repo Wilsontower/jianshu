@@ -34,18 +34,12 @@ public class ShopController {
         return myShop;
     }
 
-    @PostMapping(value = "/update")
+
+    @GetMapping(value = "/getShopByShopID/{shopId}")
     @CrossOrigin
-    public void updateShop(@RequestBody String[] data){
-        //data 第一项为ID，后为数据
-        Shop myShop = shopService.getShopByUserId(data[0]);
-        myShop.setShopName(data[1]);
-        myShop.setShopInfo(data[2]);
-        myShop.setShopType(data[3]);
-        myShop.setStatus(data[4]);
-        myShop.setAddress(data[5]);
-        myShop.setPhone(data[6]);
-        shopService.updateShop(myShop);
+    public Shop getByShopID(@PathVariable String shopId) {
+        Shop shop = shopService.getShopByShopId(shopId);
+        return shop;
     }
 
     @GetMapping(value = "/findByUserId/{userId}")

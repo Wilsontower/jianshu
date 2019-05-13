@@ -1,33 +1,35 @@
 var INDEX = angular.module("jianshuApp");
 // 主页控制器
-INDEX.controller("otherShopCtrl", ['$scope', '$http', '$state', function ($scope, $http, $state) {
+INDEX.controller("otherShopCtrl", ['$scope', '$http', '$state','$stateParams', function ($scope, $http, $state,$stateParams) {
 
     $scope.initOtherShop= function () {
         //获取主页上各种类型的书籍
-        $scope.getAllBook();
+        var shopId = $stateParams.shopID;
+        $scope.getShopByShopID(shopId);
+        $scope.getAllBooks();
     };
 
-    $scope.getAllBook = function () {
-        var url_get_all = "/book/getAllBook";
+    $scope.getShopByShopID = function (shopId) {
+        var url_get_shop = "/shop/getShopByShopID/"+shopId;
         $http({
             method: 'GET',
-            url: url_get_all
+            url: url_get_shop
         }).then(function successCallback(response) {
             var data = response.data;
-            $scope.allBook = data;
-            $scope.recommendBooks = [];
-            for(var i=0;i<5;i++){
-                $scope.recommendBooks.push($scope.allBook[i]);
-            }
-            $scope.kaoyanBooks = [];
-            var count=0;
-            for(key in $scope.allBook){
-                var bookName =$scope.allBook[key].bookName;
-                if(bookName.indexOf("考研")>=0&&count<5){
-                    $scope.kaoyanBooks.push($scope.allBook[key]);
-                    count++;
-                }
-            }
+            $scope.shopname = data["shopName"];
+            $scope.shopinfo = data["shopInfo"];
+        });
+    };
+
+    $scope.getAllBooks = function () {
+        var url_get_allBooks = "/book/getAll/"+$scope.userId;
+        $http({
+            method: 'GET',
+            url: url_get_allBooks
+        }).then(function successCallback(response) {
+            var data = response.data;
+            $scope.allBooks = data;
+
         });
 
     };

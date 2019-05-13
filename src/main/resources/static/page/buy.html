@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>商品上架 -JIANSHU</title>
+    <title>提交订单 -JIANSHU</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
@@ -30,7 +30,9 @@
                     </div>
                 </div>
                 <hr />
-                <li><a ng-click="gotoOtherShop(currentBook.shopID)" style="font-size: 20px;color:black;margin-left: 20px;">wt的小店&nbsp;></a></li>
+                <div ng-model="bookShop">
+                    <li><a ng-click="gotoOtherShop(bookShop.shopID)" style="font-size: 20px;color:black;margin-left: 20px;">{{bookShop.shopName}}&nbsp;></a></li>
+                </div>
                 <hr />
                 <div id="bookInfo">
                     <div id="book-meta">
@@ -61,7 +63,7 @@
                 <hr />
                 <div id="message">
                     <h4>留言：</h4>
-                    <input id="leaveMessage" style="border-style: none;width: 300px;" placeholder="选填，请先和商家协调一致">
+                    <input id="leaveMessage" style="border-style: none;width: 300px;" placeholder="选填，请先和商家协调一致" name="leaveMessage" ng-model="leaveMessage">
                 </div>
                 <hr />
                 <div id="total">
@@ -76,7 +78,7 @@
                 </div>
                 <div id="sure">
                     <div class="btn btn-sure">
-                        <a ng-click="setOrder()" style="color: white">确认</a>
+                        <a ng-click="addOrder()" style="color: white">确认</a>
                     </div>
                 </div>
             </div>
