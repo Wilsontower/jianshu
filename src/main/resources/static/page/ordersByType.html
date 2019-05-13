@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="page/css/ordersByType.css" type="text/css" />
+
+
+</head>
+
+<body>
+
+
+<ul>
+    <li><a class="active" href="#home">主页</a></li>
+    <li><a href="#">代发货</a></li>
+    <li><a href="#">待收货</a></li>
+    <li><a href="#">待评价</a></li>
+</ul>
+
+<div class="cell1">
+
+    <div class="title">
+
+        计算机网络<span>交易成功</span>
+
+    </div>
+
+    <div class="cell">
+
+
+        <div class="text">
+
+            <div class="brand">计算机网络</div>
+
+            <span class="intro">九成新，几乎没有使用痕迹</span>
+
+            <span class="spay">应付账款￥20</span>
+
+            <span class="pay">实际付款：￥20</span>
+
+        </div>
+
+        <div class="img"><img src="../images/jiwang.jpg"/></div>
+
+    </div>
+
+    <div class="myFooter">
+
+        <div class="myBtn">
+
+            <div class="myOption">
+
+                删除订单
+
+            </div>
+
+            <div class="myOption">
+
+                确认收货
+
+            </div>
+
+            <div class="myOption">
+
+                立即评价
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+<script>
+
+
+
+
+    autoSize();
+
+
+
+    window.onresize = function(){
+
+        autoSize();
+
+
+
+    }
+
+
+
+    function autoSize(){
+
+// 获取当前浏览器的视窗宽度，放在w中
+
+        var w = document.documentElement.clientWidth;
+
+// 计算实际html font-size大小
+
+        var size = w * 100 / 375 ;
+
+// 获取当前页面中的html标签
+
+        var html = document.querySelector('html');
+
+// 设置字体大小样式
+
+        html.style.fontSize = size/2 + 'px';
+
+    }
+
+</script>
+
+</body>
+
+</html>

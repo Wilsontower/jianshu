@@ -56,6 +56,12 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
     $scope.gotoAllOrder =function () {
         $state.go("allOrder",{cache:false},{reload: true});
     };
+
+    $scope.gotoWaitForDeliver=function () {
+        $state.go("ordersByType",{cache:false},{reload: true});
+    };
+
+
     $scope.enterDetails = function (bookId) {
         $state.go('details', {
             bookID: bookId
