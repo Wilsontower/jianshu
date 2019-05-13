@@ -20,29 +20,37 @@ public class BookOrder {
 
     private String orderStatus;//订单状态（代发货）  （已发货）  （待评价）
 
+    private String message;//用户留言
+
     public BookOrder() {
     }
 
-    public BookOrder(String orderID, String bookID, String price, String userID, String shopID, String uploadTime, String orderStatus){
-        this.bookID = orderID;
+
+    public BookOrder(String orderID, String bookID, String price, String userID, String shopID, String uploadTime, String orderStatus, String message) {
         this.orderID = orderID;
+        this.bookID = bookID;
         this.price = price;
         this.userID = userID;
         this.shopID = shopID;
         this.uploadTime = uploadTime;
         this.orderStatus = orderStatus;
-    }
-
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
+        this.message = message;
     }
 
     public String getOrderID() {
         return orderID;
     }
 
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
     public String getBookID() {
         return bookID;
+    }
+
+    public void setBookID(String bookID) {
+        this.bookID = bookID;
     }
 
     public String getPrice() {
@@ -83,5 +91,13 @@ public class BookOrder {
 
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

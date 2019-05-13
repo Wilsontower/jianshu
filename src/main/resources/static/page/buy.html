@@ -19,18 +19,18 @@
         <div class="buy-body">
             <div class="buy-details">
                 <hr />
-                <div id="userInfo">
+                <div id="userInfo" ng-model="currentUser">
                     <div id="user-Phone">
-                        <h3>收货人：{{currentUser}}</h3>
-                        <h3 style="margin-left: 150px">15927534626</h3>
+                        <h3>收货人：{{currentUser.receiver}}</h3>
+                        <h3 style="margin-left: 150px">{{currentUser.phone}}</h3>
                     </div>
                     <div id="address">
                         <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 20px;margin-top: 10px"></i>
-                        <h4>收货地址：湖北省武汉市武汉大学信息学部二食堂</h4>
+                        <h4>收货地址：{{currentUser.address}}</h4>
                     </div>
                 </div>
                 <hr />
-                <li><a ng-click="gotoShoper()" style="font-size: 20px;color:black;margin-left: 20px;">wt的小店&nbsp;></a></li>
+                <li><a ng-model="currentBook" ng-click="gotoShoper(currentBook.shopId)" style="font-size: 20px;color:black;margin-left: 20px;">wt的小店&nbsp;></a></li>
                 <hr />
                 <div id="bookInfo" ng-model="currentBook">
                     <div id="book-meta">

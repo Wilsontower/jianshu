@@ -19,6 +19,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping(value = "/getByUserId/{userId}")
+    @CrossOrigin
+    public User getByUserId(@PathVariable String userId) {
+        User user = userService.getUserById(userId);
+        return user;
+    }
+
     @DeleteMapping(value = "/delete/{userId}")
     @CrossOrigin
     public void deleteUser(@PathVariable String userId) {
