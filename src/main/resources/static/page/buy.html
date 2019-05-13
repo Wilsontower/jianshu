@@ -63,7 +63,7 @@
                 <hr />
                 <div id="message">
                     <h4>留言：</h4>
-                    <input id="leaveMessage" style="border-style: none;width: 300px;" placeholder="选填，请先和商家协调一致">
+                    <input id="leaveMessage" style="border-style: none;width: 300px;" placeholder="选填，请先和商家协调一致" name="leaveMessage" ng-model="leaveMessage">
                 </div>
                 <hr />
                 <div id="total">
@@ -78,7 +78,7 @@
                 </div>
                 <div id="sure">
                     <div class="btn btn-sure">
-                        <a ng-click="setOrder()" style="color: white">确认</a>
+                        <a ng-click="addOrder()" style="color: white">确认</a>
                     </div>
                 </div>
             </div>

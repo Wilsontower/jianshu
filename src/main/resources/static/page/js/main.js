@@ -28,9 +28,16 @@ INDEX.controller("mainCtrl", ['$scope', '$http', '$state', function ($scope, $ht
                     count++;
                 }
             }
+
+            $scope.rightBook1= null;
+            $scope.rightBook2= null;
+            $scope.rightBook1=$scope.allBook[0];
+            $scope.rightBook2=$scope.allBook[1];
         });
 
     };
+
+
 
 
     $scope.enterDetails = function (bookId) {

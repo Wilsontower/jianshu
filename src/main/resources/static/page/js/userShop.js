@@ -182,6 +182,10 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
 
     };
 
+    $scope.gotoShopInfo = function(){
+        $state.go("ShopInfo",{cache:false},{reload: true});
+    }
+
     $scope.gotoUserCenter = function () {
         $state.go("userCenter",{cache:false},{reload: true});
     };

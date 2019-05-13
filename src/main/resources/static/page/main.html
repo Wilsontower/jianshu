@@ -73,21 +73,19 @@
                         </a>
                     </div>
                     <div id="small_pic">
-                        <div class="small_pic">
-                            <img src="../images/gaoshu.jpg" style="width: 30%" >
+                        <div class="small_pic" ng-model="rightBook1" ng-click="enterDetails(rightBook1.bookID)">
+                            <img src="{{rightBook1.imageUrl}}" style="width: 30%" >
                             <div class="small_pic_content">
-                                <div class="small_pic_name"> 二手教材三折起</div>
-                                <div class="small_pic_info"> 大多九成新</div>
-                                <div class="small_pic_info"> 考前买考后卖</div>
+                                <div class="small_pic_name"> {{rightBook1.bookName}}</div>
+                                <div class="small_pic_info"> {{rightBook1.bookInfo}}</div>
                             </div>
                         </div>
                         <hr style="width: 60%"/>
-                        <div class="small_pic">
-                            <img src="../images/xiandai.jpg" style="width: 30%">
+                        <div class="small_pic" ng-model="rightBook2" ng-click="enterDetails(rightBook2.bookID)">
+                            <img src="{{rightBook2.imageUrl}}" style="width: 30%">
                             <div class="small_pic_content">
-                                <div class="small_pic_name"> 考研资料白菜价</div>
-                                <div class="small_pic_info"> 全新2020考研资料</div>
-                                <div class="small_pic_info">近乎免费</div>
+                                <div class="small_pic_name"> {{rightBook2.bookName}}</div>
+                                <div class="small_pic_info"> {{rightBook2.bookInfo}}</div>
                             </div>
                         </div>
                     </div>
