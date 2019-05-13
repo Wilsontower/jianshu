@@ -57,12 +57,32 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
         $state.go("allOrder",{cache:false},{reload: true});
     };
 
-    $scope.gotoWaitForDeliver=function () {
-        $state.go('details', {
-            TYPE: "WaitForDeliver"
+    $scope.gotoToBeDelivered = function () {
+        $state.go('ordersByType', {
+            TYPE: "TBD",
+            USER:"user"
         });
     };
 
+    $scope.gotoAwaitingReceive=function () {
+        $state.go('ordersByType', {
+            TYPE: "AR",
+            USER:"user"
+        });
+    };
+    $scope.gotoWaitingForComment=function () {
+        $state.go('ordersByType', {
+            TYPE: "WFC",
+            USER:"user"
+        });
+    };
+
+    $scope.gotoReturn=function () {
+        $state.go('ordersByType', {
+            TYPE: "RETURN",
+            USER:"user"
+        });
+    };
 
     $scope.enterDetails = function (bookId) {
         $state.go('details', {

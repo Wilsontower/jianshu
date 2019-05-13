@@ -51,11 +51,11 @@ public class BookOrderController {
         String bookInfo = data[5];
         String imageUrl = data[6];
         String createTime = getFormatDate();
-        String orderStatus = "tbd";//默认待发货
+        String orderStatus = "TBD";//默认待发货
 
         BookOrder bookOrder = new BookOrder();
         String message=null;
-        if(data.length==5) {
+        if(data.length==8) {
             message  = data[7];
             bookOrder.setMessage(message);
         }

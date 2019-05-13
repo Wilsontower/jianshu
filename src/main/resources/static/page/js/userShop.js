@@ -21,7 +21,6 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
             $scope.allBooks = data;
 
         });
-
     };
 
     $scope.createShop = function () {
@@ -178,8 +177,33 @@ INDEX.controller("shopCtrl", ['$scope', '$http', '$state', function ($scope, $ht
                 });
             });
         });
+    };
 
+    $scope.gotoToBeDeliveredShop = function () {
+        $state.go('ordersByType', {
+            TYPE: "TBD",
+            USER:"shop"
+        });
+    };
 
+    $scope.gotoAwaitingReceiveShop=function () {
+        $state.go('ordersByType', {
+            TYPE: "AR",
+            USER:"shop"
+        });
+    };
+    $scope.gotoWaitingForCommentShop=function () {
+        $state.go('ordersByType', {
+            TYPE: "WFC",
+            USER:"shop"
+        });
+    };
+
+    $scope.gotoReturnShop=function () {
+        $state.go('ordersByType', {
+            TYPE: "RETURN",
+            USER:"shop"
+        });
     };
 
     $scope.gotoShopInfo = function(){

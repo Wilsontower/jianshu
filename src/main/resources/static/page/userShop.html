@@ -38,7 +38,7 @@
             </div>
             <div class="shop-operation">
                 <span>
-                     <li><a href="#">所有订单</a></li>
+                     <li><a ng-click="gotoAllOrders()">所有订单</a></li>
                 </span>
             </div>
             <div class="shop-operation">
@@ -57,25 +57,25 @@
             <table class="vertical-line"><tr><td valign="top"></td></tr></table>
             <div class="category">
                 <div class="category-name">
-                    <li><a href="#">待发货</a></li>
+                    <li><a ng-click="gotoToBeDeliveredShop()">待发货</a></li>
                 </div>
             </div>
             <table class="vertical-line"><tr><td valign="top"></td></tr></table>
             <div class="category">
                 <div class="category-name">
-                    <li><a href="#">待收货</a></li>
+                    <li><a ng-click="gotoAwaitingReceiveShop()">待收货</a></li>
                 </div>
             </div>
             <table class="vertical-line"><tr><td valign="top"></td></tr></table>
             <div class="category">
                 <div class="category-name">
-                    <li><a href="#">待评价</a></li>
+                    <li><a ng-click="gotoWaitingForCommentShop()">待评价</a></li>
                 </div>
             </div>
             <table class="vertical-line"><tr><td valign="top"></td></tr></table>
             <div class="category">
                 <div class="category-name">
-                    <li><a href="#">退货管理</a></li>
+                    <li><a  ng-click="gotoReturnShop()">退货管理</a></li>
                 </div>
             </div>
         </div>
