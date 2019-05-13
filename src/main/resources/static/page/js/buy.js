@@ -4,6 +4,7 @@ INDEX.controller("buyCtrl", ['$scope', '$http', '$state','$stateParams', functio
 
 
     $scope. initBuy = function () {
+        $scope.currentUser = sessionStorage.getItem("user");
         var bookID = $stateParams.bookID;
         var url_get_book = "/book/getByBookId/"+bookID;
         $http({

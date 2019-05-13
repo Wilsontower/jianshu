@@ -1,0 +1,42 @@
+server:
+  port:
+    8080
+spring:
+  http:
+    encoding:
+      charset:
+        UTF-8
+      enabled:
+        true
+      force:
+        true
+  messages:
+    encoding:
+      UTF-8
+  jackson:
+    default-property-inclusion:
+      non_null
+  datasource:
+    url:
+      jdbc:mysql://212.64.15.194:3306/jianshu_db?useSSL=false&allowPublicKeyRetrieval=true
+    username:
+      root
+    password:
+      123456
+  jpa:
+    database-platform:
+      org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate.ddl-auto:
+      update
+    show-sql:
+      true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          '*'
+  endpoint:
+    health:
+      show-details: always

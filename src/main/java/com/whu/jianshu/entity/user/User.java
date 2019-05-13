@@ -22,6 +22,8 @@ public class User {
 
     private String shopID;
 
+    private String receiver;
+
     private String phone;
 
     private String address;
@@ -30,7 +32,7 @@ public class User {
         //空构造函数
     }
 
-    public User(String userID, String password, String userInfo, String school, String age, String type, String shopID, String phone, String address) {
+    public User(String userID, String password, String userInfo, String school, String age, String type, String shopID, String receiver, String phone, String address) {
         this.userID = userID;
         this.password = password;
         this.userInfo = userInfo;
@@ -38,6 +40,7 @@ public class User {
         this.age = age;
         this.type = type;
         this.shopID = shopID;
+        this.receiver = receiver;
         this.phone = phone;
         this.address = address;
     }
@@ -96,6 +99,14 @@ public class User {
 
     public void setShopID(String shopID) {
         this.shopID = shopID;
+    }
+
+    public String getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
     public String getPhone() {

@@ -17,8 +17,89 @@
     background:rgba(235,235,235,0.5);
 }
 
-.details-content{
+.buy-details{
     width: 60%;
     height:100%;
     margin-left: 20%;
+    background-color: white;
 }
+
+#userInfo{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#user-Phone{
+    display: flex;
+    flex-direction: row;
+}
+
+#address{
+    display: flex;
+    flex-direction: row;
+}
+
+#bookInfo{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#book-meta{
+    display: flex;
+    flex-direction: row;
+}
+
+#name-price{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-string{
+    margin-top:80px;
+    display: flex;
+    flex-direction: row;
+}
+
+#orderInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+#count{
+    display: flex;
+    flex-direction: row;
+}
+
+#deliver{
+    display: flex;
+    flex-direction: row;
+}
+
+#message{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+
+#total{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#total-price{
+    margin-top: 5px
+}
+
+.btn-sure{
+    margin-left: 480px;
+    margin-top: 50px;
+    background-color: #FF8C00;
+    width: 150px;
+}
+

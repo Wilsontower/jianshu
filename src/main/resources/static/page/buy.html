@@ -17,16 +17,76 @@
             </ul>
         </div>
         <div class="buy-body">
-            <div class="details-content">
+            <div class="buy-details">
                 <hr />
-                <div class="address">
-                    <h3>收货人：</h3>
-                    <h3></h3>
+                <div id="userInfo">
+                    <div id="user-Phone">
+                        <h3>收货人：{{currentUser}}</h3>
+                        <h3 style="margin-left: 150px">15927534626</h3>
+                    </div>
+                    <div id="address">
+                        <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 20px;margin-top: 10px"></i>
+                        <h4>收货地址：湖北省武汉市武汉大学信息学部二食堂</h4>
+                    </div>
                 </div>
                 <hr />
+                <li><a ng-click="gotoShoper()" style="font-size: 20px;color:black;margin-left: 20px;">wt的小店&nbsp;></a></li>
+                <hr />
+                <div id="bookInfo" ng-model="currentBook">
+                    <div id="book-meta">
+                        <img ng-src="{{currentBook.imageUrl}}" style="width: 120px;height: 150px;border-style: solid;border-width: 1px;border-color: grey;">
+                        <div id="name-price">
+                            <h4>{{currentBook.bookName}}</h4>
+                            <div class="price-string">
+                                <strong style="font-size: 20px;color:orangered;">
+                                    <en>￥</en>
+                                    <en>{{currentBook.bookPrice}}</en>
+                                    <en style="font-size: 20px;margin-left: 50px;color:gray;">x1</en>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div id="orderInfo">
+                    <div id="count">
+                        <h4>购买数量：</h4>
+                        <h4 style="margin-left: 490px">x1</h4>
+                    </div>
+                    <div id="deliver">
+                        <h4>配送方式：</h4>
+                        <h4 style="margin-left: 480px">自取</h4>
+                    </div>
+                </div>
+                <hr />
+                <div id="message">
+                    <h4>留言：</h4>
+                    <input id="leaveMessage" style="border-style: none;width: 300px;" placeholder="选填，请先和商家协调一致">
+                </div>
+                <hr />
+                <div id="total">
+                    <h4>共1件商品</h4>
+                    <h4 style="margin-left: 420px;">小计：</h4>
+                    <div id="total-price">
+                        <strong style="font-size: 20px;color:orangered;">
+                            <en>￥</en>
+                            <en>{{currentBook.bookPrice}}</en>
+                        </strong>
+                    </div>
+                </div>
+                <div id="sure">
+                    <div class="btn btn-sure">
+                        <a ng-click="setOrder()" style="color: white">确认</a>
+                    </div>
+                </div>
             </div>
 
         </div>
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
     </div>
 </div>
 </body>

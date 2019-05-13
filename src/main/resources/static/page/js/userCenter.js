@@ -52,7 +52,11 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
     $scope.gotoAllOrder =function () {
         $state.go("allOrder",{cache:false},{reload: true});
     };
-
+    $scope.enterDetails = function (bookId) {
+        $state.go('details', {
+            bookID: bookId
+        });
+    };
     $scope.backToMain = function () {
         sessionStorage.setItem("currentUrl", "main");
         currentUrl = sessionStorage.getItem("currentUrl");
