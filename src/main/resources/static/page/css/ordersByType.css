@@ -1,63 +1,4 @@
 
-html{
-
-    font-size: 10px;
-
-}
-
-body,a,ul,li{
-
-    padding:0;
-
-    margin:0;
-
-    list-style: none;
-
-    text-decoration: none;
-
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    font-size: 20px;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
-body{
-
-    /*width: 100%;*/
-
-    background: rgb(240,240,240);
-
-    font-family:PingFangSC-Regular;
-
-}
-
-div{
-
-    box-sizing: border-box;
-
-}
-
 
 .cell1{
 
@@ -197,9 +138,4 @@ overflow: scroll;
 
     margin-left: 0.07rem;
 
-}
-#navigationBar{
-    background-color: white;
-    width:68%;
-    margin-top: 20px;
 }

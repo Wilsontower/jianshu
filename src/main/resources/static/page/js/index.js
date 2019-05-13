@@ -128,6 +128,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/buy/:shopID',
        cache: false,
        templateUrl: '/page/otherShop.html'
+   }).state('ordersByType', {
+       url: '/ordersByType',
+       cache: false,
+       templateUrl: '/page/ordersByType.html'
    }).state('errorPage', {
        url: '/errorPage',
        cache: false,
