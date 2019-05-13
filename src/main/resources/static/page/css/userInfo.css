@@ -18,9 +18,8 @@ ul.userinfo_title{
     width: 460px;
     height: 100px;
     border-bottom: #e1e1e1 1px solid;
-    padding: 20px 50px 0 50px;
-    margin-top:-20px;
-    margin-left: -20px;
+    padding: 10px 5px 30px 30px;
+    margin-top:-10px;
 }
 
 ul.userinfo_title h3 {
@@ -44,7 +43,7 @@ ul.userinfo_title p {
     text-align: left;
     margin-left: 30%;
     background-color: white;
-    margin-top: 100px;
+    margin-top: 15px;
     width: 40%;
     background-color: white;
     box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.3);
