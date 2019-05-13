@@ -22,7 +22,7 @@ spring:
     username:
       root
     password:
-      z414124191
+      123456
   jpa:
     database-platform:
       org.hibernate.dialect.MySQL5InnoDBDialect
