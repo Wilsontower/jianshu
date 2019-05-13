@@ -63,13 +63,14 @@ div{
 
     float: left;
     height: 1.59rem;
-    width: 47vmax;
+    width: 77vmax;
     background: white;
 
     font-size: 0.12rem;
 
     margin-top:0.13rem;
     margin-right:0.13rem;
+    margin-left: 0.8rem;
 }
 
 .title{
