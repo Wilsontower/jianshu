@@ -49,6 +49,10 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
         $state.go("userInfo",{cache:false},{reload: true});
     };
 
+    $scope.gotoResetPwd = function(){
+        $state.go("resetPwd",{cache:false},{reload: true});
+    }
+
     $scope.gotoAllOrder =function () {
         $state.go("allOrder",{cache:false},{reload: true});
     };

@@ -100,6 +100,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/userInfo',
        cache: false,
        templateUrl: '/page/userInfo.html'
+   }).state('resetPwd',{
+       url: '/resetPwd',
+       cache: false,
+       templateUrl: '/page/resetPwd.html'
    }).state('userShop', {
        url: '/userShop',
        cache: false,
