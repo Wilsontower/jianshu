@@ -7,16 +7,16 @@ INDEX.controller("obtCtrl", ['$scope', '$http', '$state','$stateParams', functio
         var type  = $stateParams.TYPE;
         var userType  = $stateParams.USER;
 
-       if(type ==="tbd" ){
+       if(type ==="TBD" ){
            $scope.theType = "待发货";
        }
-       else if(type ==="ar"){
+       else if(type ==="AR"){
            $scope.theType = "待收货";
        }
-       else if(type ==="wfc"){
+       else if(type ==="WFC"){
            $scope.theType = "待评价";
        }
-       else if(type ==="return"){
+       else if(type ==="RETURN"){
            $scope.theType = "退货";
        }
 
