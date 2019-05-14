@@ -31,17 +31,17 @@
 
 }
 
-.user-name{
+.user-title {
     float: left;
     display: flex;
-    margin-top: 80px;
+    margin-top: 70px;
     margin-left: 50px;
     width: 200px;
     height: 100px;
-    font-size: 36px;
-    text-align: center;
-    color: #FF7F50;
+    text-align: left;
+    flex-direction: column;
 }
+
 .user-shop{
     float: left;
     display: flex;
@@ -52,6 +52,7 @@
     font-size: 16px;
     text-align: center;
 }
+
 .user-operation{
     float: left;
     display: flex;

@@ -22,19 +22,17 @@
             <div class="user-head">
                 <img  id="user-head" src="../images/defaultHead.jpg">
             </div>
-            <div class="user-name">
-                <span>
-                    <label>{{userId}}</label>
-                </span>
+            <div class="user-title">
+                <div class="user-name">
+                    <label style="font-size: 36px; color: #FF7F50; text-align: left;">{{userId}}</label>
+                </div>
+                <div class="user-info">
+                    <label style="font-size: 16px;color: grey; text-align: left;">{{userInfo}}</label>
+                </div>
             </div>
             <div class="user-shop">
                 <span>
                      <li><a ng-click="gotoShop()">我的店铺</a></li>
-                </span>
-            </div>
-            <div class="user-operation">
-                <span>
-                     <li><a ng-click="gotoAllOrder()">所有订单</a></li>
                 </span>
             </div>
             <div class="user-operation">

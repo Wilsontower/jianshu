@@ -6,6 +6,16 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
         user = sessionStorage.getItem("user");
         $scope.userId = user;
         $scope.getAllBook();
+        var url_get_user = "/user/getByUserId/"+ $scope.userId;
+        $http({
+            method: 'GET',
+            url: url_get_user
+        }).then(function successCallback(response) {
+            var data = response.data;
+            $scope.currentUser = data;
+            $scope.userInfo = $scope.currentUser["userInfo"];
+
+        });
     };
 
     $scope.getAllBook = function () {
