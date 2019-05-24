@@ -123,8 +123,11 @@ public class BookController {
 
         Book book = bookService.getBookById(bookId);
         //这里的path是本地的，到时候要替换成服务器上的地址，每个人可以根据情况先替换这个
-        String filePath = "\\home\\ubuntu\\bookImages\\"+bookId+".jpg";
+        String filePath = "F:\\我的大学\\06大三下\\学习\\软件工程\\Project\\jianshu\\src\\main\\resources\\static\\bookImages\\"+bookId+".jpg";
         String imageSrc = "/bookImages/"+bookId+".jpg";
+//        String userDir = System.getProperties().getProperty("user.dir");
+//        String filePath = userDir + "/bookImages/"+bookId+".jpg";
+//        String imageSrc = "/bookImages/"+bookId+".jpg";
         book.setImageUrl(imageSrc);
         bookService.updateBook(book);
         File result = new File(filePath);//要写入的图片
