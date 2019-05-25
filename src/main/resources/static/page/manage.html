@@ -40,6 +40,7 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
+                            <th>编号</th>
                             <th>用户ID</th>
                             <th>用户类型</th>
                             <th>年龄</th>
@@ -50,6 +51,7 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="user in allUser track by $index" ng-if="user.userID!='admin'">
+                            <td>{{ $index }}</td>
                             <td>{{user.userID}}</td>
                             <td>{{user.type}}</td>
                             <td>{{user.age}}</td>
@@ -64,6 +66,7 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
+                            <th>编号</th>
                             <th>商店名称</th>
                             <th>商店注册人</th>
                             <th>类型</th>
@@ -75,6 +78,7 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="shop in allShop track by $index">
+                            <td>{{ $index + 1 }}</td>
                             <td>{{shop.shopName}}</td>
                             <td>{{shop.userID}}</td>
                             <td>{{shop.shopType}}</td>
@@ -90,6 +94,7 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
+                            <th>编号</th>
                             <th>商品名称</th>
                             <th>价格</th>
                             <th>上传者</th>
@@ -100,6 +105,7 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="book in allBook track by $index">
+                            <td>{{ $index + 1 }}</td>
                             <td>{{book.bookName}}</td>
                             <td>{{book.bookPrice}}</td>
                             <td>{{book.userID}}</td>
@@ -114,6 +120,26 @@
 
 
         </div>
+        <div id="setPage">
+            <nav>
+                <ul class="pagination">
+                    <li>
+                        <a ng-click="Previous()">
+                            <span>上一页</span>
+                        </a>
+                    </li>
+                    <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+                        <a ng-click="selectPage(page)" >{{ page }}</a>
+                    </li>
+                    <li>
+                        <a ng-click="Next()">
+                            <span>下一页</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
     </div>
     <div class="footer">
         <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
