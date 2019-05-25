@@ -57,6 +57,11 @@ public class BookController {
     @CrossOrigin
     public void offShelf(@PathVariable String bookId) {
         bookService.deleteBook(bookId);
+        String filePath = "F:\\我的大学\\06大三下\\学习\\软件工程\\Project\\jianshu\\src\\main\\resources\\static\\bookImages\\"+bookId+".jpg";
+//        String userDir = System.getProperties().getProperty("user.dir");
+//        String filePath = userDir + "/bookImages/"+bookId+".jpg";
+        File result = new File(filePath);//要写入的图片
+        result.delete();
     }
 
     @GetMapping(value = "/find/{bookId}")

@@ -26,6 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li><a  ng-if="getCurrentUrl()=='main' && getUser()=='tourist'" ng-click="enterLogin()"><i class="fa fa-sign-in" aria-hidden="true"></i>登录</a></li>
                     <li><a  ng-if="getCurrentUrl()=='main' && getUser()!='tourist'" ng-click="enterLogin()"><i class="icon-switch2"></i>注销</a></li>
+                    <li><a  ng-if="getCurrentUrl()=='manage' && getUser()!='tourist'" ng-click="enterLogin()"><i class="icon-switch2"></i>注销</a></li>
                     <li><a  ng-if="getCurrentUrl()=='register'" ng-click="enterLogin()"><i class="fa fa-sign-in" aria-hidden="true"></i>登录</a></li>
                     <li><a  ng-if="getCurrentUrl()=='login'" ng-click="enterMain()"><i class="fa fa-home" aria-hidden="true"></i>主页</a></li>
 

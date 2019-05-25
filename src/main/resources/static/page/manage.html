@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>后台管理 -JIANSHU</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="manage-container"  ng-controller="manageCtrl" ng-init="initManage()">
+    <div class="manage-content" >
+
+        <div class="table-container" >
+            <script type="text/javascript">
+                $(function () {
+                    $('#myTab li:eq(0) a').tab('show');
+
+                    $('#myTab a').click(function (e) {
+                        e.preventDefault();
+                        $(this).tab('show');
+                    })
+                })
+
+            </script>
+            <div class="page-tabs">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a ui-sref="monitor" href="#user" data-toggle="tab">用户管理
+                        </a>
+                    </li>
+                    <li><a ui-sref="monitor" href="#shop" data-toggle="tab">店铺管理</a></li>
+                    <li><a ui-sref="monitor" href="#book" data-toggle="tab">书籍管理</a></li>
+                </ul>
+            </div>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="user">
+
+                </div>
+                <div class="tab-pane fade" id="shop">
+
+                </div>
+                <div class="tab-pane fade" id="book">
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
+
+        </iframe>
+    </div>
+</div>
+
+
+</body>
+</html>

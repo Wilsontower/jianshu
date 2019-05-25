@@ -30,7 +30,12 @@ INDEX.controller("loginCtrl", ['$scope', '$http', '$state', function ($scope, $h
                         var checkResult = response.data;
                         if (checkResult) {
                             alert("登录成功");
-                            $scope.loginMain($scope.username);
+                            if($scope.username==='admin'){
+                                $scope.loginManage($scope.username);
+                            }else{
+                                $scope.loginMain($scope.username);
+                            }
+
                         }
                         else{
                             alert("密码错误");
@@ -47,7 +52,7 @@ INDEX.controller("loginCtrl", ['$scope', '$http', '$state', function ($scope, $h
             });
         }
 
-    }
+    };
 
     $scope.loginMain = function (userId) {
         sessionStorage.setItem("currentUrl", "main");
@@ -55,12 +60,20 @@ INDEX.controller("loginCtrl", ['$scope', '$http', '$state', function ($scope, $h
         currentUrl = sessionStorage.getItem("currentUrl");
         user = sessionStorage.getItem("user");
         $state.go("main",{cache:false},{reload: true});
-    }
+    };
+
+    $scope.loginManage = function (userId) {
+        sessionStorage.setItem("currentUrl", "manage");
+        sessionStorage.setItem("user", userId);
+        currentUrl = sessionStorage.getItem("currentUrl");
+        user = sessionStorage.getItem("user");
+        $state.go("manage",{cache:false},{reload: true});
+    };
 
     $scope.gotoError = function () {
 
         $state.go("errorPage",{cache:false},{reload: true});
-    }
+    };
 
 
 

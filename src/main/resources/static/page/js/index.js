@@ -80,6 +80,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/register',
        cache: false,
        templateUrl: '/page/register.html'
+   }).state('manage', {
+       url: '/manage',
+       cache: false,
+       templateUrl: '/page/manage.html'
    }).state('details', {
        url: '/details/:bookID',
        cache: false,
