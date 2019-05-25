@@ -100,6 +100,10 @@ INDEX.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
        url: '/userCenter',
        cache: false,
        templateUrl: '/page/userCenter.html'
+   }).state('shopCart', {
+       url: '/shopCart',
+       cache: false,
+       templateUrl: '/page/shopCart.html'
    }).state('userInfo',{
        url: '/userInfo',
        cache: false,

@@ -73,6 +73,9 @@ INDEX.controller("centerCtrl", ['$scope', '$http', '$state', function ($scope, $
             USER:"user"
         });
     };
+    $scope.gotoToShopCart = function(){
+        $state.go('shopCart', {cache:false},{reload: true});
+    };
 
     $scope.gotoAwaitingReceive=function () {
         $state.go('ordersByType', {

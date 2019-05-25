@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>购物车 -JIANSHU</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
 </head>
 <body>
+<div class="shopCart-container"  ng-controller="shopCartCtrl" ng-init="initShopCart()">
+    <div class="shopCart-content" >
+        <div>
+            <ul class="breadcrumb">
+                <li><a ng-click="backToMain()">主页</a></li>
+                <li> <a ng-click="gotoUserCenter()">个人中心</a></li>
+                <li class="active">购物车</li>
+            </ul>
+        </div>
+        <div class="cell1" ng-repeat="info in allInfos track by $index">
+            <div class="cell">
+                <div class="text">
+                    <div class="brand" style="font-size: 30px">{{info.bookName}}</div>
+                    <span class="intro" style=" font-size: 17px;margin-top: 17px;">{{info.bookInfo}}</span>
+                    <span class="pay" style="font-size: 18px; margin-top: 30px;}">实际付款：￥{{info.bookPrice}}</span>
+                </div>
+                <div class="img"><img ng-src="{{info.imageUrl}}"/></div>
+            </div>
+            <div class="myBtn">
+                <a ng-click="deleteThis(info.cartID)">
+                    删除
+                </a>
+            </div>
+        </div>
+        <div class = "buyAll">
+            <div class="sum">
+                总价格:
+                <div class="sumNum">
+                    {{PriceSum}}
+                </div>
+            </div>
+            <div class="myBtm">
+                <a ng-click="buyAll()">
+                    结算
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
 
+        </iframe>
+    </div>
+</div>
 </body>
 </html>
