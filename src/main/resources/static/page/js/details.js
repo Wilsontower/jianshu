@@ -27,6 +27,9 @@ INDEX.controller("detailsCtrl", ['$scope', '$http', '$state','$stateParams', fun
     };
     
     $scope.gotoOrderDetails = function (bookId) {
+        if(user==='tourist'){
+            $state.go('login');
+        }
         $state.go('buy', {
             bookID: bookId
         });
