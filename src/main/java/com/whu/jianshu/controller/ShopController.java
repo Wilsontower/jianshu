@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -32,6 +33,13 @@ public class ShopController {
     public Shop getByUserId(@PathVariable String userId) {
         Shop myShop = shopService.getShopByUserId(userId);
         return myShop;
+    }
+
+    @GetMapping(value = "/getAll")
+    @CrossOrigin
+    public List<Shop> getAllShop() {
+        List<Shop> allShop = shopService.getAllShop();
+        return allShop;
     }
 
     @PostMapping(value = "/update")

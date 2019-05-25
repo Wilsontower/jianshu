@@ -33,6 +33,13 @@ public class BookController {
         return book;
     }
 
+    @GetMapping(value = "/getAll")
+    @CrossOrigin
+    public List<Book> getAllBook() {
+        List<Book> allBook = bookService.getAllBook();
+        return allBook;
+    }
+
 
     @GetMapping(value = "/stopSale/{bookId}")
     @CrossOrigin

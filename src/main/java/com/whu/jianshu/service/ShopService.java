@@ -5,6 +5,8 @@ import com.whu.jianshu.repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ShopService {
 
@@ -15,6 +17,9 @@ public class ShopService {
         return shopRepository.save(shop);
     }
 
+    public List<Shop> getAllShop() {
+        return shopRepository.findAll();
+    }
 
     public void deleteShop(String shopId) {
         shopRepository.deleteById(shopId);

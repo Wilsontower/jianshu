@@ -37,13 +37,78 @@
             </div>
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade in active" id="user">
-
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>用户ID</th>
+                            <th>用户类型</th>
+                            <th>年龄</th>
+                            <th>学校</th>
+                            <th>电话</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="user in allUser track by $index" ng-if="user.userID!='admin'">
+                            <td>{{user.userID}}</td>
+                            <td>{{user.type}}</td>
+                            <td>{{user.age}}</td>
+                            <td>{{user.school}}</td>
+                            <td>{{user.phone}}</td>
+                            <td><button type="button" class="btn btn-danger" ng-click="deleteUser(user.userID)">删除</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="tab-pane fade" id="shop">
-
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>商店名称</th>
+                            <th>商店注册人</th>
+                            <th>类型</th>
+                            <th>电话</th>
+                            <th>注册时间</th>
+                            <th>商店编号</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="shop in allShop track by $index">
+                            <td>{{shop.shopName}}</td>
+                            <td>{{shop.userID}}</td>
+                            <td>{{shop.shopType}}</td>
+                            <td>{{shop.phone}}</td>
+                            <td>{{shop.createTime}}</td>
+                            <td>{{shop.shopID}}</td>
+                            <td><button type="button" class="btn btn-danger" ng-click="deleteShop(shop.shopID)">删除</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="tab-pane fade" id="book">
-
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>商品名称</th>
+                            <th>价格</th>
+                            <th>上传者</th>
+                            <th>上架时间</th>
+                            <th>商品编号</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="book in allBook track by $index">
+                            <td>{{book.bookName}}</td>
+                            <td>{{book.bookPrice}}</td>
+                            <td>{{book.userID}}</td>
+                            <td>{{book.uploadTime}}</td>
+                            <td>{{book.bookID}}</td>
+                            <td><button type="button" class="btn btn-danger" ng-click="deleteBook(book.bookID)">删除</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
