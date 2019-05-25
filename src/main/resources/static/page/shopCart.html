@@ -19,34 +19,51 @@
                 <li class="active">购物车</li>
             </ul>
         </div>
-        <div class="cell1" ng-repeat="info in allInfos track by $index">
-            <div class="cell">
-                <div class="text">
-                    <div class="brand" style="font-size: 30px">{{info.bookName}}</div>
-                    <span class="intro" style=" font-size: 17px;margin-top: 17px;">{{info.bookInfo}}</span>
-                    <span class="pay" style="font-size: 18px; margin-top: 30px;}">实际付款：￥{{info.bookPrice}}</span>
+        <div class="shopCart-body">
+            ​
+            <div class="block" ng-repeat="info in allInfos track by $index">
+                <div class="block-line">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{$index+1}}号商品</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="block-body">
+                                <div class="text">
+                                    <div class="brand" style="font-size: 30px">{{info.bookName}}</div>
+                                    <span class="intro" style=" font-size: 16px;margin-top: 17px;color: grey">{{info.bookInfo}}</span>
+                                    <span class="pay" style="font-size: 18px; margin-top: 30px;color: red}">实际付款：￥{{info.bookPrice}}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label style="color: grey;font-size: 20px;margin-top: 50px">x1</label>
+                            </div>
+                            <div class="img-shopCart"><img style="width: 120px;height: 150px;margin-left: 30px;" ng-src="{{info.imageUrl}}"/></div>
+                            <div class="deleteBtn">
+                                <button  type="button" class="btn btn-danger" ng-click="deleteThis(info.cartID)">
+                                    删除
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="img"><img ng-src="{{info.imageUrl}}"/></div>
             </div>
-            <div class="myBtn">
-                <a ng-click="deleteThis(info.cartID)">
-                    删除
-                </a>
+
+            <div class = "buyAll">
+                <div class="sum" style="display: flex;flex-direction: row">
+                    <label style="color: grey;font-size: 20px">总价格:</label>
+                    <label class="sumNum" style="color: red;font-size: 20px">
+                        ￥{{PriceSum}}
+                    </label>
+                </div>
+                <div class="btn-byAll" style="margin-left: 50px">
+                    <button type="button" class="btn btn-danger" ng-click="buyAll()">
+                        结算
+                    </button>
+                </div>
             </div>
         </div>
-        <div class = "buyAll">
-            <div class="sum">
-                总价格:
-                <div class="sumNum">
-                    {{PriceSum}}
-                </div>
-            </div>
-            <div class="myBtm">
-                <a ng-click="buyAll()">
-                    结算
-                </a>
-            </div>
-        </div>
+
     </div>
     <div class="footer">
         <iframe class="mainframe" src="page/footer.html" frameborder="0"  scrolling="no" >
